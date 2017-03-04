@@ -140,6 +140,17 @@ CREATE TABLE `event_participants` (
   `status` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
+-- Table structure for table `event_participants_spot`
+
+CREATE TABLE `event_participants_spot` (
+  `sno` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `part_id` int(10) NOT NULL,
+  `event_id` int(10) NOT NULL,
+  `paid` char(2) NOT NULL,
+  `trans_id` varchar(15) NOT NULL,
+  `attendance` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
 -- --------------------------------------------------------
 
 --
