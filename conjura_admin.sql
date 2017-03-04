@@ -189,7 +189,7 @@ CREATE TABLE `participants` (
 CREATE TABLE `refund` (
   `sno` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `trans_id` varchar(15) NOT NULL,
-  `amt` int(10) NOT NULL,
+  `refund_amt` int(10) NOT NULL,
   `comments` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
