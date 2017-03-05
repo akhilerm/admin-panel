@@ -1,12 +1,13 @@
 <?php
 
-	require_once("db_connect.php");
+	
 	function lock($event_id,$con)
 	{
 		$query = "UPDATE events SET lock_event =1 WHERE event_id='".$eventid."';";
 		$result = $con->query($query);
-		if($result==TRUE)	
+		if($result==TRUE){
 			return 1;
+		echo "the event has locked ";}
 		else 
 		 	return 0;
 	}
@@ -14,7 +15,7 @@
 	{
 		$query="SELECT id,name,college,email,phone from participants as p,event_participants_spot as t where p.id = t.part_id and event_id='".$event_id."';";
 		$result = $con->query($query);
-		$count=0
+		$count=0;
 		if($result->num_rows>0)
 		{
 			echo "<table class='table table-striped'>";
