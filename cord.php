@@ -40,10 +40,21 @@
            
             
             <ul>
+        		<?php 
+				
+				$sql = "SELECT lock_event FROM events WHERE event_id='".$event_id."';";
+				$result = $con->query($sql);
+				if($result->num_rows>0)
+					while($row=$result->fetch_assoc())
+						$status=$row['lock_event'];
+				if($status == 0)
+					echo "<li><a href='lock.php' >LOCK</a></li>";
+				else
+					echo "<li><a href='unlock.php' >UNLOCK</a></li>";
+				?>
         		
         		
-        		<li><a href="lock.php" >LOCK</a></li>
-        		<li><a href="unlock.php" >UNLOCK</a></li>
+        		
         		
             </ul>
             
