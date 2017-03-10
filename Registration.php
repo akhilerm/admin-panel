@@ -96,6 +96,7 @@ td{
 																				<ul>
 								 <li class="text-info">Full Name *</li>
 								 <li id="name"><?php 
+                                     require('CookieCheck.php');
 								 require('db_connect.php');
 								 $a=$_GET["name"];
 								 $b=$_GET["option"];

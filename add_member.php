@@ -1,4 +1,7 @@
+<?php
+require('CookieCheck.php');
 
+?>
 <!DOCTYPE HTML>
 <html>
 <head>

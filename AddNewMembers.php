@@ -1,4 +1,5 @@
 <?php
+require('CookieCheck.php');
 require('db_connect.php');
 $head_id=$_GET["id"];
 $event_id=$_GET["eid"];

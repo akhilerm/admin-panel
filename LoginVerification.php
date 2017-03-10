@@ -2,7 +2,7 @@
 require('db_connect.php');
 $usr=$_POST["username"];
 $pass=$_POST["password"];
-$cookie_name="usercookie";
+$cookie_name="user";
 $cookie_value=$usr;
 
 $sql="select * from login";

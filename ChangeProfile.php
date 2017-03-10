@@ -1,4 +1,5 @@
 <?php
+require('CookieCheck.php');
 require('db_connect.php');
 $part_id=$_POST["pid"];
 $name=$_POST["name"];
