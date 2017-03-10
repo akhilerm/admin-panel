@@ -100,6 +100,7 @@ td{
 								 require('db_connect.php');
 								 $a=$_GET["name"];
 								 $b=$_GET["option"];
+                                //echo $b."     :  ";
 								 $id=0;
 								 if($b=='0')
 								 {
@@ -122,7 +123,7 @@ td{
 									}
 									else
 									{
-	echo "empty";
+	                                   echo "empty";
 									}
 
 
@@ -206,7 +207,7 @@ td{
 <input type="addevent" class="button1" value="+Add Event" style="position:relative; left: 85%;" onclick="popupGeneratorForAddEvents();"></p>
 </div>
 <table class="table table-bordered">
-	<thead>
+<!--	<thead>-->
 		<tr>
 			<th>Event name</th>
 			<th>Event amount</th>
@@ -217,27 +218,33 @@ td{
 		</tr>
 		
 
+<!--
 	</thead>
  <tbody>
+-->
+   
 	 <?php
 	 
 	 
 	 
-	 $geteventid="select event_id from event_participants where part_id='".$id."'";
+	 $geteventid="select * from event_participants where part_id='".$id."'";
 	 $resulteid=$con->query($geteventid);
 	 if($resulteid->num_rows>0)
 	{
+         
 	while($row=$resulteid->fetch_assoc())
 	{
 			$geteventdetails="select * from events where event_id='".$row["event_id"]."'";
+        
 			$resultevent=$con->query($geteventdetails);
 			 if($resultevent->num_rows>0)
 			{
 				while($rowevent=$resultevent->fetch_assoc())
 				{
-					echo "<tr>";
-				    echo " <td>".$rowevent["event_name"]."</td><td>".$rowevent["amount"]."</td>";
+					echo "<tr >";
+				    echo " <td style=\"color: black;\">".$rowevent["event_name"]."</td><td style=\"color: black;\">".$rowevent["amount"]."</td>";
 					$checkteam=$rowevent["team"];
+                    echo "<td style=\"color: black;\">".$row["paid"]."</td><td style=\"color: black;\">".$row["trans_id"]."</td>";
 				}
 
 			}
@@ -247,21 +254,25 @@ td{
 			{
 				while($roweventpartdetails=$resulteventpartdetails->fetch_assoc())
 				{*/
-					echo "<td>".$row["paid"]."</td><td>".$row["trans_id"]."</td>";
+					
 				/*}
 			}*/
 			if($checkteam=='y')
 					{
-						echo"<td><input type=\"button\" class=\"button1\" value=\"Add/View\" onclick=\"popupGeneratorForAddMembers(\'1002\',\'13021\');\"></td>";
+						echo"<td><input type=\"button\" class=\"button1\" value=\"Add/View\" onclick=\"popupGeneratorForAddMembers('".$row["event_id"]."','".$id."');\"></td>";
 					}
-					else 
-						echo "<td>   </td>";
-					echo"<td><input type=\"button\" class=\"button1\" value=\"Delete\" onclick=\"deleteFromEvent(\'1002\',\'13021\');\" id=\"1002\"></td></tr>";
+			else{
+                echo "<td>   </td>";
+            }
+                    	
+					echo"<td><input type=\"button\" class=\"button1\" value=\"Delete\" onclick=\"deleteFromEvent('".$row["event_id"]."','".$id."');\" id=\"".$row["event_id"]."\"></td>";
+                    
+        echo '</tr>';
 				}
 		}
 
 	 ?>
- </tbody>
+<!-- </tbody>-->
 </table>
 </div>
 <div class="submitform">

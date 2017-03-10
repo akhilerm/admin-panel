@@ -1,7 +1,6 @@
 <?php
-if(!issetof($_COOKIE["user"]))
+if(!isset($_COOKIE["user"]))
 {
     header('Location: Login.php');
 }
-
 ?>

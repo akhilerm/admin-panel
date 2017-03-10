@@ -15,7 +15,7 @@ function getChangesFromPopupForEditProfile(name,email,phno,gender,acc)
     pageReload();
 }
 
-function deleteFromEvent(name)
+function deleteFromEvent(name,pid)
 {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -23,10 +23,10 @@ function deleteFromEvent(name)
                     document.getElementById(name).value="Deleted";
                     document.getElementById(name).style="color:red";
                     document.getElementById(name).disabled=true;
-                    pagereload();
+                    pageReload();
             }
         };
-    xmlhttp.open("GET", "DeleteEvent.php?id=" + name+"&eid=", true);
+    xmlhttp.open("GET", "DeleteEvent.php?id=" + pid+"&eid="+name, true);
     xmlhttp.send();
 }
 

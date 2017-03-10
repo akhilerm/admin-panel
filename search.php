@@ -24,24 +24,24 @@
 								<div class="main-section agile">
 					<div class="login-form">
 							<h1 style="color: black;">Edit-Profile</h1>
-						<form action="#" method="post">
+						<form action="Registration.php" method="GET">
 							<ul>
 								 <li class="text-info">NAME </li>
-								 <li><input type="text" name="name" placeholder="" required></li>
+								 <li><input type="text" name="name" placeholder="" required id="name"></li>
 								 <div class="clear"></div>
 							 </ul>
 						<ul>
 								<li class="text-info"><!--------------></li>
-								<li class="se"><select class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]">
+								<li class="se"><select class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">
 								 <option>--select--</option>
-								 <option value="00">phone_no</option>
-								 <option value="10">email_id</option>
-								 <option value="00">transaction_id</option>
+								 <option value="0">phone_no</option>
+								 <option value="1">email_id</option>
+								 <option value="2">transaction_id</option>
 
 								 </select></li>
 								<div class="clear"></div>
 							</ul>
-								<input type="edit" value="SEARCH">
+								<input type="submit" value="SEARCH">
 							<div class="clear"></div>
 						</form>
 					</div>
