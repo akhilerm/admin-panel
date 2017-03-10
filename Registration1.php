@@ -95,75 +95,22 @@ td{
 						<form action="#" method="post">
 																				<ul>
 								 <li class="text-info">Full Name *</li>
-								 <li id="name"><?php 
-								 require('db_connect.php');
-								 $a=$_GET["name"];
-								 $b=$_GET["option"];
-								 $id=0;
-								 if($b=='0')
-								 {
-									$sql="select * from participants where phone='".$a."'";
-								}
-								else if($b=='1')
-								{
-									$sql="select * from participants where email='".$a."'";
-								}
-								else
-								{
-									$sql1="select part_id from transactions where trans_id='".$a."'";
-									$result1=$con->query($sql1);
-									if($result1->num_rows>0)
-									{
-										while($row1=$result1->fetch_assoc())
-										{
-											$id=$row1["part_id"];
-										}
-									}
-									else
-									{
-	echo "empty";
-									}
-
-
-									$sql="select * from participants where id='".$id."'";
-								}
-									$result=$con->query($sql);
-									if($result->num_rows>0)
-									{
-										while($row=$result->fetch_assoc())
-										{
-											echo $row["name"];
-											$id=$row["id"];
-									
-								 ?>
-								 </li>
+								 <li id="name"></li>
 								 <div class="clear"></div>
 							 </ul>
-                            
-                            
-                            <ul>
+                             <ul>
 								 <li class="text-info">Part ID *</li>
-								 <li id="pid">
-                                <?php
-                                  echo $id;          
-                                ?>
-                                </li>
+								 <li id="pid"></li>
 								 <div class="clear"></div>
 							 </ul>
-                            
 							 <ul>
 								 <li class="text-info">Email ID *</li>
-								 <li id="mail"><?php
-											echo $row["email"];
-											?>
-								 </li>
+								 <li id="mail"></li>
 								 <div class="clear"></div>
 							 </ul>
 							 <ul>
 								 <li class="text-info">Phone Number *</li>
-								 <li id="phno"><?php
-											echo $row["phone"];
-											?></li>
+								 <li id="phno"></li>
 								 <div class="clear"></div>
 							 </ul>
 
@@ -174,19 +121,12 @@ td{
 
 							 <ul>
 								<li class="text-info">Gender *</li>
-								<li id="gender"><?php
-											echo $row["gender"];
-											?></li>
+								<li id="gender"></li>
 								<div class="clear"></div>
 							</ul>
 							<ul>
  							 <li class="text-info">Accommodation *</li>
- 							 <li id="accomodation"> <?php
-											echo $row["accommodation"];
-											}
-											}
-											?></li>
- 							
+ 							 <li id="accomodation"></li>
  							 <div class="clear"></div>
  						 </ul>
 
@@ -214,57 +154,24 @@ td{
 			<th>Members</th>
 			<th>Status</th>
 		</tr>
-		
 
 	</thead>
  <tbody>
-	 <?php
-	 
-	 
-	 
-	 $geteventid="select event_id from event_participants where part_id='".$id."'";
-	 $resulteid=$con->query($geteventid);
-	 if($resulteid->num_rows>0)
-	{
-	while($row=$resulteid->fetch_assoc())
-	{
-			$geteventdetails="select * from events where event_id='".$row["event_id"]."'";
-			$resultevent=$con->query($geteventdetails);
-			 if($resultevent->num_rows>0)
-			{
-				while($rowevent=$resultevent->fetch_assoc())
-				{
-					echo "<tr>";
-				    echo " <td>".$rowevent["event_name"]."</td><td>".$rowevent["amount"]."</td>";
-					$checkteam=$rowevent["team"];
-				}
-
-			}
-			/*$geteventpartdetails="select * from event_participants where event_id='".$row["event_id"]."'";
-			$resulteventpartdetails=$con->query($geteventpartdetails);
-			if($resulteventpartdetails->num_rows>0)
-			{
-				while($roweventpartdetails=$resulteventpartdetails->fetch_assoc())
-				{*/
-					echo "<td>".$row["paid"]."</td><td>".$row["trans_id"]."</td>";
-				/*}
-			}*/
-			if($checkteam=='y')
-					{
-						echo"<td><input type=\"button\" class=\"button1\" value=\"Add/View\" onclick=\"popupGeneratorForAddMembers(\'1002\',\'13021\');\"></td>";
-					}
-					else 
-						echo "<td>   </td>";
-					echo"<td><input type=\"button\" class=\"button1\" value=\"Delete\" onclick=\"deleteFromEvent(\'1002\',\'13021\');\" id=\"1002\"></td></tr>";
-				}
-		}
-
-	 ?>
+	 <tr>
+	 <td></td>
+	 <td></td>
+	 <td></td>
+	 <td></td>
+	 <td><input type="button" class="button1" value="Add/View" onclick="popupGeneratorForAddMembers('1002','13021');"></td>
+	 <td><input type="button" class="button1" value="Delete" onclick="deleteFromEvent('1002','13021');" id="1002"></td>
+	 </tr>
  </tbody>
 </table>
 </div>
-<div class="submitform">
+<div class="submitform"><a href="OnlineToSpot.php?id=">
+<!--    provide id =partid-->
 	<input type="submit" value="submit">
+    </a>
 </div>
 
 			<!--//table-->
