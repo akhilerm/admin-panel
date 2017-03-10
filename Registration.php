@@ -81,13 +81,11 @@ td{
 <!--web-fonts-->
 </head>
 <body style="padding-bottom:3%;">
-		<!---header--->
+
 		<div class="header w3ls">
 
 			<h2 style="color: black;"><img src="images/LOGO.png" height="90px" width="90px">CONJURA'17</h2>
 		</div>
-		<!---header--->
-		<!---main--->
 			<div class="main">
 								<div class="main-section agile">
 					<div class="login-form">
@@ -198,8 +196,6 @@ td{
 					</div>
 				</div>
 			</div>
-			<!---main--->
-			<!--table-->
 
 				<div class="container" style="padding-top: 30px">
 
@@ -207,7 +203,7 @@ td{
 <input type="addevent" class="button1" value="+Add Event" style="position:relative; left: 85%;" onclick="popupGeneratorForAddEvents();"></p>
 </div>
 <table class="table table-bordered">
-<!--	<thead>-->
+
 		<tr>
 			<th>Event name</th>
 			<th>Event amount</th>
@@ -218,10 +214,7 @@ td{
 		</tr>
 		
 
-<!--
-	</thead>
- <tbody>
--->
+
    
 	 <?php
 	 

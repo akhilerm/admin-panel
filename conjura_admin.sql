@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `conjura`
 --
-CREATE DATABASE IF NOT EXISTS `conjura` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `conjura`;
+CREATE DATABASE IF NOT EXISTS `conjura_spot` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `conjura_spot`;
 -- --------------------------------------------------------
 
 --
