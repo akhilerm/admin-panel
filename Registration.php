@@ -274,7 +274,7 @@ td{
 </table>
 </div>
 <div class="submitform">
-	<input type="submit" value="submit">
+	<input type="submit" value="submit" onclick="Submit();">
 </div>
 
 			<!--//table-->

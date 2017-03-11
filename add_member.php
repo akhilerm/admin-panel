@@ -16,19 +16,15 @@ require('CookieCheck.php');
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <style src="css/style.css"></style>
+<script src="js/add_member.js"></script>
 
 <!--web-fonts-->
 </head>
 <body>
 
-			<h6 id="eid" style="visibility: hidden;">
-			<?php
-            require('db_connect.php');
-			$head_id=$_GET["id"];
-			$event_id=$_GET["eid"];
-				echo $event_id;
-			?>
-			</h6>
+			<h6 id="eid" style="visibility: hidden;"><?php
+            require('db_connect.php');$head_id=$_GET["id"];$event_id=$_GET["eid"];echo $event_id;
+			?></h6>
 		<!---header--->
 		<div class="header w3ls">
 
@@ -79,7 +75,7 @@ require('CookieCheck.php');
 
 												<ul>
 								<li class="text-info">Phone Number *</li>
-								<li><input type="text" placeholder="" required></li>
+								<li><input type="text" placeholder="" required id="phno"></li>
 								<div class="clear"></div>
 							</ul>
 							<input type="edit" value="SUBMIT" onclick="Add_Member();">

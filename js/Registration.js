@@ -50,3 +50,8 @@ function pageReload()
 {
     window.open("Registration.php?name="+window.document.getElementById('mail').innerHTML+"&option=1","_self")
 }
+
+function Submit()
+{
+    window.open("OnlineToSpot.php?id="+getId(),"_self")
+}

@@ -10,9 +10,9 @@ function ChangeParent()
      var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert(xd);
-                console.log(xd);
-                    //window.close();
+//                alert(xd);
+//                console.log(xd);
+                    window.close();
             }
         };
     xdx=window.document.getElementById('gender').value=="00"?"F":"M";
