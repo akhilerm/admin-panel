@@ -11,10 +11,11 @@ function ChangeParent()
     xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 alert(xd);
+                console.log(xd);
                     //window.close();
             }
         };
-    xdx=window.document.getElementById('gender').value=="00"?"Female":"Male";
+    xdx=window.document.getElementById('gender').value=="00"?"F":"M";
     xd="ChangeProfile.php?name="+window.document.getElementById('name').value+"&email="+window.document.getElementById('email').value+"&phno="+window.document.getElementById('phno').value+"&gender="+xdx+"&acc="+window.document.getElementById('accomodation').value+"&pid="+window.opener.getId();
     
     xmlhttp.open("GET",  xd, true);

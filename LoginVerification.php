@@ -8,8 +8,7 @@ $cookie_value=$usr;
 
 $Flag=0;
 $sql="select * from login";
-$result=$con->query($sql) or die(mysqli_error($con));
-
+$result=$con->query($sql);
 if($result->num_rows>0)
 {
 	while($row=$result->fetch_assoc())
@@ -26,7 +25,7 @@ if($result->num_rows>0)
 	}
 }
 if($Flag==0)
-	header('Location: Login.php');
+header('Location: Login.php');
 //$url="";//redirect unauthorized users
 //header('Location:'.$url);
 

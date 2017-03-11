@@ -42,10 +42,11 @@ function popupGeneratorForAddEvents()
 
 function getId()
 {
-    return window.document.getElementById('pid').value;
+//    alert(window.document.getElementById('pid').value);
+    return window.document.getElementById("piid").innerHTML;
 }
 
 function pageReload()
 {
-    location.reload();
+    window.open("Registration.php?name="+window.document.getElementById('mail').innerHTML+"&option=1","_self")
 }
