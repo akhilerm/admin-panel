@@ -14,34 +14,18 @@ require('CookieCheck.php');
 <!--web-fonts-->
 <!--<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>-->
 <script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style src="css/style.css"></style>
 
 <!--web-fonts-->
 </head>
 <body>
-		<?php
-		require('db_connect.php');
+
+			<h6 id="eid" style="visibility: hidden;">
+			<?php
+            require('db_connect.php');
 			$head_id=$_GET["id"];
 			$event_id=$_GET["eid"];
-			$sql_get="select member_id from team where head_id='".$head_id."' and event_id='".$event_id."'";
-			$result=$con->query($sql_get);
-			if($result->num_rows>0)
-			{
-				while($row=$result->fetch_assoc())
-				{
-					$sql_sel="select * from participants where id='".$row["member_id"]."'";
-					$result1=$con->query($sql_sel);
-					if($result1->num_rows>0)
-					{
-						while($row1=$result1->fetch_assoc())
-						{
-							echo "</br> ".$row1["name"]."   ".$row1["phone"];
-						}
-					}
-				}
-			}
-			?>
-			<h6 id="eid">
-			<?php
 				echo $event_id;
 			?>
 			</h6>
@@ -56,6 +40,40 @@ require('CookieCheck.php');
 								<div class="main-section agile">
 					<div class="login-form">
 							<h1 style="color: black;">Add/View Member</h1>
+                        
+                        <table  class="table table-bordered">
+                            <tbody >
+                            
+                            	<tr>
+			<th>Member&nbsp;&nbsp;&nbsp;</th>
+			<th>Phone&nbsp;&nbsp;&nbsp;</th>
+
+                            </tr>
+                        
+                        
+                        
+        <?php
+			$sql_get="select member_id from team where head_id='".$head_id."' and event_id='".$event_id."'";
+			$result=$con->query($sql_get);
+			if($result->num_rows>0)
+			{
+				while($row=$result->fetch_assoc())
+				{
+					$sql_sel="select * from participants where id='".$row["member_id"]."'";
+					$result1=$con->query($sql_sel);
+					if($result1->num_rows>0)
+					{
+						while($row1=$result1->fetch_assoc())
+						{
+							echo "<tr> <th>".$row1["name"]."</th> <th>  ".$row1["phone"]."<th></tr>";
+						}
+					}
+				}
+			}
+			?>
+                  </tbody>   
+               </table>         
+                        
 						<form action="#" method="post">
 						
 

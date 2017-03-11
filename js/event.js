@@ -6,6 +6,7 @@ function AddEvent()
                     window.close();
             }
         };
-    xmlhttp.open("GET", "AddEvent.php?id="+window.opener.getId()+"&ename="+window.document.getElementById("event").value , true);
+    xmlhttp.open("GET", "AddEvent.php?id="+window.opener.getId()+"&ename="+window.document.getElementById("eid").value , true);
+    alert(window.document.getElementById("eid").value);
     xmlhttp.send();
 }

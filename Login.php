@@ -15,29 +15,39 @@
 <!--web-fonts-->
 </head>
 <body>
-	<div class="header w3ls">
-		<h2>Conjura'17</h2>
-	</div>
-	<div class="main">
-		<div class="main-section agile">
-			<div class="login-form">
-				<h1 style="color: black;">LOGIN</h1>
-				<form action="LoginVerification.php" method="post">
-					<ul>
-						<li class="text-info">User Name</li>
-						<li><input type="text" placeholder="enter username" name="username" id="username" required></li>
-						<div class="clear"></div>
-					</ul>
-					<ul>
-						<li class="text-info">Password</li>
-						<li><input style="padding:4px;width:320px;"type="password" placeholder="enter password" name="password" id="pass"></li>
-						<div class="clear"></div>
-					</ul>
-					<input type="submit" class="btn btn-default" value="SUBMIT">
-					<div class="clear"></div>
-				</form>
-			</div>
+		<!---header--->
+		<div class="header w3ls">
+
+			<h2>Conjura'17</h2>
 		</div>
-	</div>
+		<!---header--->
+		<!---main--->
+			<div class="main">
+								<div class="main-section agile">
+					<div class="login-form">
+							<h1 style="color: black;">LOGIN</h1>
+						<form action="LoginVerification.php" method="post">
+							<ul>
+			<li class="text-info">User Name</li>
+			<li><input type="text" placeholder="enter username" name="username" id="username" required></li>
+			<div class="clear"></div>
+		</ul>
+
+												<ul>
+								<li class="text-info">Password</li>
+								<li><input type="password" placeholder="enter password" name="password" id="pass"></li>
+								<div class="clear"></div>
+							</ul>
+							<input type="submit" class="btn btn-default" value="SUBMIT">
+							<div class="clear"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!---main--->
+			<!--table-->
+
+
+			<!--//table-->
 </body>
 </html>

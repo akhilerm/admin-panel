@@ -1,5 +1,5 @@
 <?php
-require('C:\xampp\htdocs\admin-panel/db_connect.php');
+require('db_connect.php');
 $event_name=$_POST["ename"];
 $part_id=$_POST["id"];
 $sql_get="select event_id from events where event_name='".$event_name."'";

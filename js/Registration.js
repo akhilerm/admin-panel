@@ -30,7 +30,7 @@ function deleteFromEvent(name,pid)
     xmlhttp.send();
 }
 
-function popupGeneratorForAddMembers(id,eid)
+function popupGeneratorForAddMembers(eid,id)
 {
     add_mambers=window.open('add_member.php?id='+id+"&eid="+eid,'Add_Members','height=400 , width=300');
 }
