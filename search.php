@@ -14,34 +14,29 @@
 <!--web-fonts-->
 </head>
 <body>
-		<!---header--->
-		<div class="header w3ls">
-			<h2>Conjura'17</h2>
-		</div>
-		<!---header--->
-		<!---main--->
-			<div class="main">
-								<div class="main-section agile">
-					<div class="login-form">
-							<h1 style="color: black;">Edit-Profile</h1>
-						<form action="Registration.php" method="GET">
-							<ul>
-								 <li class="text-info">NAME </li>
-								 <li><input type="text" name="name" placeholder="" required id="name"></li>
-								 <div class="clear"></div>
-							 </ul>
+	<div class="header w3ls">
+		<h2>Conjura'17</h2>
+	</div>
+		<div class="main">
+			<div class="main-section agile">
+				<div class="login-form">
+					<h1 style="color: black;">Search</h1>
+					<form action="Registration.php" method="GET">
 						<ul>
-								<li class="text-info"><!--------------></li>
-								<li class="se"><select class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">
-								 <option>--select--</option>
-								 <option value="0">phone_no</option>
-								 <option value="1">email_id</option>
-								 <option value="2">transaction_id</option>
-
-								 </select></li>
-								<div class="clear"></div>
-							</ul>
-								<input type="submit" value="SEARCH">
+							 <li class="text-info">NAME </li>
+							 <li><input type="text" name="name" placeholder="" required id="name"></li>
+							 <div class="clear"></div>
+						 </ul>
+						<ul>
+							<li class="text-info"></li>
+							<li class="se">
+								<select class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">
+									<option disabled selected>--select--</option>
+									<option value="0">phone_no</option>
+									<option value="1">email_id</option>
+									<option value="2">transaction_id</option>
+								</select>
+							</li>
 							<div class="clear"></div>
 						</form>
 					</div>
