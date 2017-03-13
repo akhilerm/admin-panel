@@ -67,7 +67,7 @@
 		</form>
 		<br/>
 		<?php 
-		$query="SELECT id,name,college,email,phone from participants as p,event_participants_spot as t where p.id = t.part_id and event_id='".$event_id."';";
+		$query="SELECT id,name,college,email,phone,attendance from participants as p,event_participants_spot as t where p.id = t.part_id and event_id='".$event_id."';";
 		$result = $con->query($query);
 		$count=0;
 		if($result->num_rows>0)
@@ -79,10 +79,20 @@
 		
 			while($row=$result->fetch_assoc())
 			{
-				
+				$newstatus=$row['attendance'];
+				$priz=$row['attendance'];
 				$_SESSION['rowid']=$row['id'];
 				echo "<tr>";
-				echo "<td>".++$count."</td><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['college']."</td><td>".$row['email']."</td><td>".$row['phone']."</td><td><a href='present.php'>present</a> &nbsp; <a href='absent.php'>absent</a></td><td><a href='first.php'>first</a> &nbsp; <a href='second.php'>second</a> &nbsp; <a href='third.php'>third</a> </td>";
+				echo "<td>".++$count."</td><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['college']."</td><td>".$row['email']."</td><td>".$row['phone']."</td>";
+				if($newstatus!=0){
+					echo "<td><a href='present.php/?id=".$row['id']."'>present</a></td>";
+				}
+				if($newstatus==0){
+					echo "<td><a href='absent.php/?id=".$row['id']."'>absent</a></td>";
+				}
+				if($priz ==-1 OR $priz==0){
+					echo "<td><a href='first.php/?id=".$row['id']."'>first</a> &nbsp; <a href='second.php/?id=".$row['id']."'>second</a> &nbsp; <a href='third.php/?id=".$row['id']."'>third</a> </td>";
+				}
 				echo "</tr>";
 			}		
 			echo "</table>";
