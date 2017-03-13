@@ -22,7 +22,8 @@ session_create();
 <!--web-fonts-->
 </head>
 <body>
-		<!---header--->
+<!--echo  $_SESSION['SEARCH_MSG'] -->
+		<!---header   ->
 		<div class="header w3ls">
 			<h2>Conjura'17</h2>
 		</div>
@@ -35,16 +36,17 @@ session_create();
 						<form action="Registration.php" method="GET">
 							<ul>
 								 <li class="text-info">NAME </li>
-								 <li><input type="text" name="name" placeholder="" required id="name"></li>
+								 <li><input type="text" name="input" placeholder="" required id="input"></li>
 								 <div class="clear"></div>
 							 </ul>
 						<ul>
 								<li class="text-info"><!--------------></li>
 								<li class="se"><select class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">
 								 <option>--select--</option>
-								 <option value="0">phone_no</option>
-								 <option value="1">email_id</option>
-								 <option value="2">transaction_id</option>
+								 <option value="0">Conjura_ID</option>
+								 <option value="1">Phone_No</option>
+								 <option value="2">Email</option>
+								 <option value="3">Transaction_ID</option>
 
 								 </select></li>
 								<div class="clear"></div>
