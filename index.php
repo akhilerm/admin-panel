@@ -10,7 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Conjura'17,registration"/>
+    <meta name="keywords" content="Conjura'17,Registration"/>
   </head>
   <body>
     <div class="header w3ls">
@@ -29,7 +29,7 @@
                 }
             ?>
           </h1>
-          <form action="LoginVerification.php" method="post">
+          <form action="loginVerification.php" method="post">
             <ul>
               <li class="text-info">User Name</li>
               <li><input type="text" placeholder="enter username" name="username" id="username" required></li>

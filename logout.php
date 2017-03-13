@@ -4,9 +4,9 @@ session_create();
 if (session_check()==true)
 {
   sess_destroy();
-  header("location:Login.php");
+  header("location:index.php");
 }  
 else
 {
-  header("location:Login.php");
+  header("location:index.php");
 }
