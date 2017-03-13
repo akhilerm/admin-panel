@@ -6,6 +6,6 @@
 		$result = $con->query($query);
 		
 	
-	header("location:cord.php");
+	header("location:index.php");
 	
 	?>

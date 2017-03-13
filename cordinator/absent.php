@@ -9,5 +9,5 @@ $query = "UPDATE event_participants_spot set attendance = -1 where event_id = '"
 echo $query;	
 	$result = $con-> query($query);
 		
-			header("location:../cord.php");
+			header("location:../index.php");
 			?>

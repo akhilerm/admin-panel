@@ -62,7 +62,7 @@
    
 
 		<br/><br/><br/>
-		<form action="cord.php" >
+		<form action="index.php" >
 		<input type ="submit" value ="view"/>
 		</form>
 		<br/>
