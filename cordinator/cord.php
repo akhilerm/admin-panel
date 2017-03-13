@@ -1,5 +1,5 @@
 <?php 
- require_once("db_connect.php");
+ require_once("../db_connect.php");
  $event_id=1001;
  		
 	session_start();
@@ -9,17 +9,17 @@
 <html>
 <head>
 <title>Conjura'17</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Nirav'16,registration" />
-<script src="js/Registration.js"></script>
+<script src="../js/Registration.js"></script>
 <!--web-fonts-->
 <!--<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>-->
-<script src="js/jquery-1.12.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/jquery-1.12.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 
 
@@ -31,7 +31,7 @@
 		<!---header--->
 		<div class="header w3ls">
 
-			<h2 style="color: black;"><img src="images/LOGO.png" height="90px" width="90px">CONJURA'17</h2>
+			<h2 style="color: black;"><img src="../images/LOGO.png" height="90px" width="90px">CONJURA'17</h2>
 		</div>
 	
            
@@ -101,7 +101,7 @@
 			echo "NONE HAS REGISTERED";
 		?>
 		
-		<?php include 'footer.php';  ?>
+		<?php include '../footer.php';  ?>
 		</div> 
 		</body>
 </html>
