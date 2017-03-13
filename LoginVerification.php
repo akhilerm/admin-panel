@@ -38,18 +38,18 @@
   		else
   		{
   			$_SESSION['MESSAGE']="Login Failed";
-  			header('Location: Login.php');	
+  			header('Location: Logout.php');	
   		}
 	  }
 	  else
 	  {
 	  	$_SESSION['MESSAGE']="Login Failed";
-	  	header('Location: Login.php');	
+	  	header('Location: Logout.php');	
 	  }
   }
   else
   {
   	$_SESSION['MESSAGE']="Login Failed";
-  	header('Location: Login.php');
+  	header('Location: Logout.php');
   }
 ?>

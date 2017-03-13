@@ -10,6 +10,6 @@ function AddEvent()
         };
     xt="AddEvent.php?id="+window.opener.getId()+"&ename="+window.document.getElementById("eid").value;
     xmlhttp.open("GET",xt, true);
-    alert(xt);
+  //  alert(xt);
     xmlhttp.send();
 }

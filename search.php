@@ -1,4 +1,12 @@
+<?php
+require('db_connect.php');
+session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
 
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -23,7 +31,7 @@
 			<div class="main">
 								<div class="main-section agile">
 					<div class="login-form">
-							<h1 style="color: black;">Edit-Profile</h1>
+							<h1 style="color: black;">SEARCH PARTICIPANT</h1>
 						<form action="Registration.php" method="GET">
 							<ul>
 								 <li class="text-info">NAME </li>
@@ -49,3 +57,8 @@
 			</div>
 </body>
 </html>
+<?php
+                                        
+                                    }
+                                }
+                                        ?>

@@ -1,6 +1,15 @@
 <?php
 require('db_connect.php');
-$part_id=$_GET["id"];
+session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
+
+?>
+<?php
+//require('db_connect.php');
+$part_id=cleanup($_GET["id"],$con);
 $sql_sel="select * from event_participants where part_id='".$part_id."'";
 $result=$con->query($sql_sel);
 if($result->num_rows>0)
@@ -20,6 +29,13 @@ if($result->num_rows>0)
 }
 
 $sql_del="delete from event_participants where part_id='".$part_id."'";
-$con->query($sql);
+$con->query($sql_del);
 
+                                        
+header('Location: reg_home.php');	
+?>
+
+<?php
+                                    }
+                                }
 ?>

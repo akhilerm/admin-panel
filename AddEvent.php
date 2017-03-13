@@ -1,7 +1,18 @@
 <?php
 require('db_connect.php');
-$event_name=$_GET["ename"];
-$part_id=$_GET["id"];
+session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
+
+?>
+
+
+<?php
+
+$event_name=cleanup($_GET["ename"],$con);
+$part_id=cleanup($_GET["id"],$con);
 $sql_get="select event_id from events where event_name='".$event_name."'";
 $result=$con->query($sql_get);
 if($result->num_rows>0)
@@ -14,4 +25,10 @@ if($result->num_rows>0)
 		$con->query($sql_ins);
 	}
 }
+?>
+
+<?php
+                                        
+                                    }
+                                }
 ?>

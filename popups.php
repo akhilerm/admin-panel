@@ -1,5 +1,10 @@
 <?php
-require('CookieCheck.php');
+require('db_connect.php');
+session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
 
 ?>
 <!DOCTYPE HTML>
@@ -92,3 +97,8 @@ require('CookieCheck.php');
 			<!--//table-->
 </body>
 </html>
+<?php
+                                        
+                                    }
+                                }
+?>

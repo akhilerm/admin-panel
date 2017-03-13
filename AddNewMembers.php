@@ -1,9 +1,19 @@
 <?php
-require('CookieCheck.php');
 require('db_connect.php');
-$head_id=$_GET["id"];
-$event_id=$_GET["eid"];
-$phone=$_GET["phno"];
+session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
+
+?>
+
+<?php
+
+
+$head_id=cleanup($_GET["id"],$con);
+$event_id=cleanup($_GET["eid"],$con);
+$phone=cleanup($_GET["phno"],$con);
 $sql_get="select id from participants where phone='".$phone."'";
 echo $sql_get."<br>";
 $result=$con->query($sql_get);
@@ -17,4 +27,8 @@ if($result->num_rows>0)
 	}
 }
 
+?>
+<?php
+                                    }
+                                }
 ?>

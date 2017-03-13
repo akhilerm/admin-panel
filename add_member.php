@@ -1,5 +1,10 @@
 <?php
-require('CookieCheck.php');
+require('db_connect.php');
+session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
 
 ?>
 <!DOCTYPE HTML>
@@ -23,7 +28,10 @@ require('CookieCheck.php');
 <body>
 
 			<h6 id="eid" style="visibility: hidden;"><?php
-            require('db_connect.php');$head_id=$_GET["id"];$event_id=$_GET["eid"];echo $event_id;
+//            require('db_connect.php');
+                                        $head_id=cleanup($_GET["id"],$con);
+                                        $event_id=cleanup($_GET["eid"],$con);
+                                        echo $event_id;
 			?></h6>
 		<!---header--->
 		<div class="header w3ls">
@@ -74,7 +82,7 @@ require('CookieCheck.php');
 						
 
 												<ul>
-								<li class="text-info">Phone Number *</li>
+								<li class="text-info">Phone Number of PRE registered member*</li>
 								<li><input type="text" placeholder="" required id="phno"></li>
 								<div class="clear"></div>
 							</ul>
@@ -92,3 +100,8 @@ require('CookieCheck.php');
 
 </body>
 </html>
+<?php
+                                        
+                                    }
+                                }
+?>

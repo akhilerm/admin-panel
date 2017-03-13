@@ -96,10 +96,15 @@ td{
 																				<ul>
 								 <li class="text-info">Full Name *</li>
 								 <li id="name"><?php 
-                                     require('CookieCheck.php');
 								 require('db_connect.php');
-								 $a=$_GET["name"];
-								 $b=$_GET["option"];
+                 				session_create();
+  								if(session_check()==true)
+  								{
+   									if(session_get_reg()==1)
+   									{
+								 
+								 $a=cleanup($_GET["name"],$con);
+								 $b=cleanup($_GET["option"],$con);
                                 //echo $b."     :  ";
 								 $id=0;
 								 if($b=='0')
@@ -185,6 +190,10 @@ td{
 											echo $row["accommodation"];
 											}
 											}
+
+
+
+
 											?></li>
  							
  							 <div class="clear"></div>
@@ -269,6 +278,77 @@ td{
 				}
 		}
 
+
+
+
+
+
+// TO GET DATA FROM EVENT_PARTICIPANT_SPOT
+
+
+
+
+  $geteventid="select * from event_participants_spot where part_id='".$id."'";
+	  $resulteid=$con->query($geteventid);
+	  if($resulteid->num_rows>0)
+	 {
+         
+	 while($row=$resulteid->fetch_assoc())
+	 {
+	 		$geteventdetails="select * from events where event_id='".$row["event_id"]."'";
+        
+	 		$resultevent=$con->query($geteventdetails);
+	 		 if($resultevent->num_rows>0)
+	 		{
+	 			while($rowevent=$resultevent->fetch_assoc())
+	 			{
+	 				echo "<tr >";
+	 			    echo " <td style=\"color: black;\">".$rowevent["event_name"]."</td><td style=\"color: black;\">".$rowevent["amount"]."</td>";
+	 				$checkteam=$rowevent["team"];
+                     echo "<td style=\"color: black;\">".$row["paid"]."</td><td style=\"color: black;\">".$row["trans_id"]."</td>";
+	 			}
+
+	 		}
+	 		$geteventpartdetails="select * from event_participants_spot where event_id='".$row["event_id"]."'";
+	 		$resulteventpartdetails=$con->query($geteventpartdetails);
+	 		if($resulteventpartdetails->num_rows>0)
+	 		{
+	 			while($roweventpartdetails=$resulteventpartdetails->fetch_assoc())
+	 			{
+					
+	 			/*}
+	 		}*/
+	 		if($checkteam=='y')
+	 				{
+	 					echo"<td><input type=\"button\" class=\"button1\" value=\"Add/View\" onclick=\"popupGeneratorForAddMembers('".$row["event_id"]."','".$id."');\"></td>";
+	 				}
+	 		else{
+                 echo "<td>   </td>";
+             }
+                    	
+//	 				 echo"<td><input type=\"button\" class=\"button1\" value=\"Delete\" onclick=\"deleteFromEvent('".$row["event_id"]."','".$id."');\" id=\"".$row["event_id"]."\"></td>";
+                    
+                    
+         echo '</tr>';
+	 			}
+	 	}
+
+     }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+											}
+											}//close session check
 	 ?>
 <!-- </tbody>-->
 </table>
