@@ -1,13 +1,9 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Conjura'17</title>
+    <title>Conjura'17|Registration</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Nirav'16,registration" />
     <script src="../js/registration.js"></script>
     <script src="../js/jquery-1.12.0.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -24,7 +20,6 @@
       width: 18%;
       font-family: 'Ubuntu', sans-serif;
       margin: 0 0 0 3em;
-      align-self: center;
       position:relative;
       left: 40%;
       text-align: center;
@@ -72,7 +67,7 @@
     </style>
   </head>
 <?php
-  require('db_connect.php');
+  require('../db_connect.php');
   session_create();
   if(session_check()==true)
   {
@@ -97,7 +92,7 @@
 ?>
 					<body style="padding-bottom:3%;">
 	    			<div class="header w3ls">
-	      			<h2 style="color: black;"><img src="images/logo.png" height="90px" width="90px">CONJURA'17</h2>
+	      			<h2 style="color: black;"><img src="../images/logo.png" height="90px" width="90px">Conjura'17</h2>
 	    			</div>
 <?php
 						include('profile.php');
@@ -108,7 +103,7 @@
 	      			</p>
 	   				</div>   
 <?php
-						include('event_table.php');
+						include('eventTable.php');
 ?>
 						<div class="submitform">
 	      			<input type="submit" value="submit" onclick="Submit();">
@@ -131,11 +126,11 @@
 	  }
 	  else
 	  {
-	  	header("location:Logout.php");
+	  	header("location:../logout.php");
 	  }
 	}
 	else
 	{
-		header("location:Logout.php");
+		header("location:../logout.php");
 	}
 ?>

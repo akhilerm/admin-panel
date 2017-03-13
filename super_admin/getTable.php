@@ -3,7 +3,7 @@
 include 'query.php';
 include 'connection.php';
 $conn = OpenCon();
-$query="SELECT events.event_name,count(event_participants_spot.part_id) FROM events,event_participants_spot";
+$query="SELECT events.event_name,count(event_participants_spot.part_id) FROM events,event_participants_spot where events.event_id=event_participants_spot.event_id";
 $result = exquery($conn,$query);
 
 echo "<table>
