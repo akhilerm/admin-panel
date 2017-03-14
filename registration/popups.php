@@ -5,6 +5,9 @@ if(session_check()==true)
 {
 	if(session_get_reg()==1)
 	{
+		$id=cleanup($_GET['id'],$con);
+		$query="select * from participants where id=$id";
+		
 ?>
 		<!DOCTYPE HTML>
 		<html>
