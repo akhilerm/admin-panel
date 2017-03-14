@@ -27,7 +27,7 @@ if(session_check()==true)
 								<li>
 									<select class="form-control"  name="eid" style="border-radius:0px" id="eid">
 <?php	
-										$sqlget="select * from events";
+										$sqlget="select * from events where lock_event=0";
 										$result=$con->query($sqlget);
 										if($result->num_rows>0)
 										{
