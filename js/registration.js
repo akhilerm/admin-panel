@@ -32,7 +32,7 @@ function deleteFromEvent(name,pid)
 
 function popupGeneratorForAddMembers(eid,id)
 {
-    add_mambers=window.open('add_member.php?id='+id+"&eid="+eid,'Add_Members','height=400 , width=300');
+    add_mambers=window.open('addMember.php?id='+id+"&eid="+eid,'Add_Members','height=400 , width=300');
 }
 
 function popupGeneratorForAddEvents()
@@ -48,10 +48,10 @@ function getId()
 
 function pageReload()
 {
-    window.open("Registration.php?name="+window.document.getElementById('email').innerHTML+"&option=1","_self");
+    window.open("Registration.php?input="+window.document.getElementById('email').innerHTML+"&option=1","_self");
 }
 
 function Submit()
 {
-    window.open("OnlineToSpot.php?id="+getId(),"_self");
+    window.open("onlineToSpot.php?id="+getId(),"_self");
 }

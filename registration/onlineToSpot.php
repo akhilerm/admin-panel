@@ -1,5 +1,5 @@
 <?php
-require('db_connect.php');
+require('../db_connect.php');
 session_create();
   								if(session_check()==true)
   								{
@@ -22,8 +22,8 @@ if($result->num_rows>0)
 		$paid=$row["paid"];
 		$t_id=$row["trans_id"];
 		$status=$row["status"];
-		$sql_ins="insert into event_participants_spot values(NULL,'".$p_id."','".$e_id."','".$paid."','".$t_id."','".$status."')";
-		$con->query($sql_ins)or die ('ffvv');
+		$sql_ins="insert into event_participants_spot(`sno`, `part_id`, `event_id`, `trans_id`) values(NULL,'".$p_id."','".$e_id."','".$t_id."')";
+		$con->query($sql_ins)or die (mysqli_error($con));
         
 	}
 }
@@ -32,7 +32,7 @@ $sql_del="delete from event_participants where part_id='".$part_id."'";
 $con->query($sql_del);
 
                                         
-header('Location: reg_home.php');	
+header('Location: index.php');	
 ?>
 
 <?php

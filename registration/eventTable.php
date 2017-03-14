@@ -40,7 +40,7 @@
 					  	}
 				  	} 
 				}
-				$event_list="select * from event_participants  join events on event_participants.event_id=events.event_id left outer join transactions on event_participants.trans_id=transactions.trans_id where event_participants.part_id='".$row['id']."'"; 
+				$event_list="select * from event_participants left outer join events on event_participants.event_id=events.event_id left outer join transactions on event_participants.trans_id=transactions.trans_id where event_participants.part_id='".$row['id']."'"; 
 				$result=$con->query($event_list);
 				if($result)
 				{    
@@ -51,10 +51,10 @@
 				  			echo "<tr>";
 				  		  	echo "<td style='color: black;'>".$row_event["event_display"]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
-				  			echo"<td><input type= 'button' class= 'button1'  value= 'Delete' onclick= 'deleteFromEvent('".$row_event["event_id"]."','".$row['id']."');' id=".$row_event['event_id']."></td>";              	  	
+				  			echo"<td><input type= 'button' class= 'button1'  value= 'Delete' onclick=\"deleteFromEvent('".$row_event["event_id"]."','".$row['id']."');\" id=".$row_event['event_id']."></td>";              	  	
 						  	if($row_event["team"]=='y')
 							{
-								echo"<td><input type= 'button' class= 'button1' value= 'Add/View ' onclick= 'popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');'></td>";
+								echo"<td><input type= 'button' class= 'button1' value= 'Add/View ' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
 							}
 						  	else
 						  	{
