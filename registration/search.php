@@ -22,6 +22,15 @@ if(session_check()==true)
 					<div class="main-section agile">
 						<div class="login-form">
 							<h1 style="color: black;">SEARCH PARTICIPANT</h1>
+							<h4 style="color: black;">
+<?php
+								if(isset($_SESSION['SEARCH_MSG']))
+				                {
+				                  echo  $_SESSION['SEARCH_MSG'];
+				                  unset($_SESSION['SEARCH_MSG']);
+				                }
+?>								
+							</h4>
 							<form action="registration.php" method="GET">
 								<ul>
 									<li class="text-info">NAME </li>
