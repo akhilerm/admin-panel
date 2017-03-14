@@ -40,7 +40,7 @@
 					  	}
 				  	} 
 				}
-				$event_list="select * from event_participants left outer join events on event_participants.event_id=events.event_id left outer join transactions on event_participants.trans_id=transactions.trans_id where event_participants.part_id='".$row['id']."'"; 
+				$event_list="select * from event_participants  join events on event_participants.event_id=events.event_id left outer join transactions on event_participants.trans_id=transactions.trans_id where event_participants.part_id='".$row['id']."'"; 
 				$result=$con->query($event_list);
 				if($result)
 				{    

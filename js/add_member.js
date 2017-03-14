@@ -8,7 +8,7 @@ function Add_Member()
             }
         };
    xx=( window.document.getElementById("eid").innerHTML).replace(/[^0-9]/g, ''); 
-    xt="AddNewMembers.php?id="+window.opener.getId()+"&eid="+xx+"&phno="+window.document.getElementById('phno').value;
+    xt="../registration/addNewMembers.php?id="+window.opener.getId()+"&eid="+xx+"&phno="+window.document.getElementById('phno').value;
     xmlhttp.open("GET", xt, true);
     xmlhttp.send();
 }

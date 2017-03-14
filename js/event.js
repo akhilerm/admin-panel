@@ -7,7 +7,7 @@ function AddEvent()
                 window.close();
             }
         };
-    xt="addEvent.php?part_id="+window.opener.getId()+"&eid="+window.document.getElementById("eid").value;
+    xt="../registration/addEvent.php?part_id="+window.opener.getId()+"&eid="+window.document.getElementById("eid").value;
     xmlhttp.open("GET",xt, true);
     xmlhttp.send();
 }

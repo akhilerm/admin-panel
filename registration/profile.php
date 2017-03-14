@@ -26,6 +26,10 @@
 		              	<li id="phone"><?php echo $row["phone"]; ?></li>
 		            </ul>
 		            <ul>
+		              	<li class="text-info">College :</li>
+		              	<li id="college"><?php echo $row["college"]; ?></li>
+		            </ul>
+		            <ul>
 		            	<li class="text-info">Gender :</li>
 		            	<li id="gender"><?php echo strtoupper($row['gender']); ?></li>
 		            </ul>
