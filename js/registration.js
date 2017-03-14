@@ -2,7 +2,7 @@ var edit_profile;
 var add_mambers;
 function popupGeneratorForEditProfile()
 {
-    edit_profile=window.open('../registration/popups.php?id='+getId(),'EDIT_PROFILE','height=400 , width=300');
+    edit_profile=window.open('popups.php?id='+getId(),'EDIT_PROFILE','height=400 , width=300');
 }
 
 function getChangesFromPopupForEditProfile(name,email,phno,gender,acc)
@@ -26,31 +26,32 @@ function deleteFromEvent(name,pid)
                     pageReload();
             }
         };
-    xmlhttp.open("GET", "../registration/deleteEvent.php?id=" + pid+"&eid="+name, true);
+    xmlhttp.open("GET", "deleteEvent.php?id=" + pid+"&eid="+name, true);
     xmlhttp.send();
 }
 
 function popupGeneratorForAddMembers(eid,id)
 {
-    add_mambers=window.open('../registration/addMember.php?id='+id+"&eid="+eid,'Add_Members','height=400 , width=300');
+    add_mambers=window.open('add_member.php?id='+id+"&eid="+eid,'Add_Members','height=400 , width=300');
 }
 
 function popupGeneratorForAddEvents()
 {
-    add_mambers=window.open('../registration/event.php','Add_Members','height=400 , width=300');
+    add_mambers=window.open('event.php','Add_Members','height=400 , width=300');
 }
 
 function getId()
 {
+//    alert(window.document.getElementById('pid').value);
     return window.document.getElementById("id").innerHTML;
 }
 
 function pageReload()
 {
-    window.open("../registration/registration.php?name="+window.document.getElementById('mail').innerHTML+"&option=1","_self")
+    window.open("Registration.php?name="+window.document.getElementById('email').innerHTML+"&option=1","_self");
 }
 
 function Submit()
 {
-    window.open("../registration/onlineToSpot.php?id="+getId(),"_self")
+    window.open("OnlineToSpot.php?id="+getId(),"_self");
 }
