@@ -59,7 +59,7 @@ if(session_check()==true)
            			</table>              
 					<form action="#" method="post">
 						<ul>
-							<li class="text-info">Phone Number of PRE-registered member*</li>
+							<li class="text-info">Phone Number of Pre-registered member*</li>
 							<li><input type="text" placeholder="" required id="phno"></li>
 						</ul>
 						<input type="edit" value="SUBMIT" onclick="Add_Member();">

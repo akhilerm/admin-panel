@@ -9,17 +9,15 @@ if(session_check()==true)
         $event_id=cleanup($_GET["eid"],$con);
         $phone=cleanup($_GET["phno"],$con);
         $sql_get="select id from participants where phone='".$phone."'";
-        echo $sql_get."<br>";
         $result=$con->query($sql_get);
         if($result->num_rows>0)
         {
-        	while($row=$result->fetch_assoc())
-        	{
-        		$sql_ins="insert into team(event_id,head_id,member_id) values('".$event_id."','".$head_id."','".$row["id"]."')";
-                echo $sql_ins;
-                $result1=$con->query($sql_ins);
-        	}
+        	$row=$result->fetch_assoc();
+    		$sql_ins="insert into team(event_id,head_id,member_id) values(".$event_id.",".$head_id.",".$row["id"].")";
+            $result1=$con->query($sql_ins) or die(mysqli_error());
         }
+        else 
+            echo "failed";
     }
     else
        header("location:../index.php"); 
