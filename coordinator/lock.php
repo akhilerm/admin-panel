@@ -3,7 +3,7 @@
 	session_create();
 	if(session_check()==true)
   	{
-    	if(session_get_coord()=1)
+    	if(session_get_coord()==1)
     	{
 			$event_id=$_SESSION['event_id'];
 			$query = "UPDATE events SET lock_event =1 WHERE event_id='".$event_id."';";
@@ -11,7 +11,8 @@
 			header("location:index.php");
 		}
 		else
-	}		header("location:../index.php");
+			header("location:../index.php");
+	}
 	else
 		header("location:../index.php");
 ?>
