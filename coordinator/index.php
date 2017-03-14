@@ -5,8 +5,7 @@
   	{
     	if($_SESSION['LoggedINCoord']==1)
     	{
-			$event_id=1001;
-			//event id has to be obtained
+			$event_id=$_SESSION['event_id'];
 ?>			
 			<html>
 				<head>
