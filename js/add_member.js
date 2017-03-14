@@ -5,7 +5,7 @@ function Add_Member()
             if (this.readyState == 4 && this.status == 200) {
             }
         };
-   xx=( window.document.getElementById("eid").innerHTML).replace(/[^0-9]/g, ''); 
+    xx=( window.document.getElementById("eid").innerHTML).replace(/[^0-9]/g, ''); 
     xt="../registration/addNewMembers.php?id="+window.opener.getId()+"&eid="+xx+"&phno="+window.document.getElementById('phno').value;
     xmlhttp.open("GET", xt, true);
     xmlhttp.send();

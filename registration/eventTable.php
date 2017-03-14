@@ -15,7 +15,7 @@
 				    <th>Status</th>
 				</tr>
 <?php
-				$event_list="select * from event_participants_spot as eps,events as e,transactions as t where eps.trans_id=t.trans_id and e.event_id=eps.event_id and eps.part_id='".$row['id']."'";
+				$event_list="select * from event_participants_spot left outer join events on event_participants_spot.event_id=events.event_id left outer join transactions on event_participants_spot.trans_id=transactions.trans_id where event_participants_spot.part_id='".$row['id']."'";
 				$result=$con->query($event_list);
 				if($result)
 				{    
@@ -29,7 +29,7 @@
 				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
 						  	if($row_event["team"]=='y')
 							{
-								echo"<td><input type= 'button' class= 'button1' value= 'Add/View ' onclick= 'popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');'></td>";
+								echo"<td><input type= 'button' class= 'button1' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
 							}
 						  	else
 						  	{

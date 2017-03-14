@@ -23,5 +23,9 @@ if(session_check()==true)
 		$con->query($sqlins)or die($sqlins);
 		header('Location:registration.php?input='.$num.'&option=0');
 	}
+	else
+		header("location:../logout.php");
 }
+else
+	header("location:../logout.php");
 ?>

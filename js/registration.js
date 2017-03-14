@@ -43,7 +43,6 @@ function popupGeneratorForAddEvents()
 
 function getId()
 {
-//    alert(window.document.getElementById('pid').value);
     return window.document.getElementById("id").innerHTML;
 }
 

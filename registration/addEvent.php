@@ -7,7 +7,7 @@ if(session_check()==true)
 	{
         $event_id=cleanup($_GET["eid"],$con);
         $part_id=cleanup($_GET["part_id"],$con);
-		$sql_ins="insert into event_participants(part_id,event_id,paid,trans_id,status) values('".$part_id."','".$event_id."','y','1000',0)";
+		$sql_ins="insert into event_participants(part_id,event_id,paid,trans_id) values('".$part_id."','".$event_id."','n','1000')";
 		$result=$con->query($sql_ins);                               
     }
 }
