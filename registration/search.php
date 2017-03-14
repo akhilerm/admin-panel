@@ -12,9 +12,12 @@ if(session_check()==true)
 				<title>Conjura'17 | Search</title>
 				<link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
 				<script src="../js/jquery-1.12.0.min.js"></script>
+				<link rel="stylesheet" href="../css/bootstrap.min.css">
 			</head>
 			<body>
-				<!--echo  $_SESSION['SEARCH_MSG'] -->
+<?php
+  		        include('../header.php');
+?>			
 				<div class="header w3ls">
 					<h2>Conjura'17</h2>
 				</div>
@@ -49,7 +52,7 @@ if(session_check()==true)
 									</li>
 								</ul>
 								<input type="submit" value="SEARCH"/>
-							</form>
+							</form>			
 						</div>
 					</div>
 				</div>

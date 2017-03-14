@@ -89,6 +89,7 @@
    			if($result->num_rows>0)
 	      {
 	      	$row=$result->fetch_assoc();
+          include('../header.php');
 ?>
 					<body style="padding-bottom:3%;">
 	    			<div class="header w3ls">
@@ -108,6 +109,9 @@
 						<div class="submitform">
 	      			<input type="submit" value="submit" onclick="Submit();">
 	    			</div>
+<?php
+        include('../footer.php');
+?>            
 	  			</body>
 				</html>	 	   							
 <?php
@@ -115,7 +119,7 @@
 	      else
 	      {
 	      	$_SESSION['SEARCH_MSG']="No records Found.";
-   				header("location:search.php");
+   				//header("location:search.php");
 	      }
    		}
    		else
