@@ -6,6 +6,7 @@
   	if(session_get_reg()==1)
   	{
 ?>
+<<<<<<< HEAD
 
 
 <!DOCTYPE html>
@@ -48,7 +49,7 @@
 <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
-      <a type="button" href="SpotReg.php" class="btn btn-success"><span class="glyphicon glyphicon-user"></span> Register</a>
+      <a type="button" href="spotReg.php" class="btn btn-success"><span class="glyphicon glyphicon-user"></span> Register</a>
 <!--      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>-->
     </div>
 </div>
@@ -57,7 +58,7 @@
 
 
 
-<?php
+
   	}
   	else
   	{

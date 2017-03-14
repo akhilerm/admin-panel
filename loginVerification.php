@@ -32,6 +32,7 @@
   			else if((int)$row['event_id']>=1001 && (int)$row['event_id']<=1201)
   			{
   				session_set_coord();
+          $_SESSION['event_id']=$row['event_id'];
   			}
   			redirect();
   		}

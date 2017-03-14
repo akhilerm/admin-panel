@@ -47,9 +47,8 @@ CREATE TABLE IF NOT EXISTS `event_participants` (
   `event_id` int(10) NOT NULL,
   `paid` char(2) NOT NULL,
   `trans_id` varchar(15) NOT NULL,
-  `status` int(2)  DEFAULT -1,
   PRIMARY KEY (`sno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=501 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `login` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -89,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `amt` int(10) NOT NULL,
   `trans_id` varchar(50) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` int(2)  DEFAULT -1,
   PRIMARY KEY (`sno`),
   UNIQUE KEY `trans_id` (`trans_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
@@ -1465,7 +1465,9 @@ INSERT INTO `transactions` (`sno`, `part_id`, `amt`, `trans_id`, `time`) VALUES
 (204, 11489, 0, '7736598670', '2017-03-13 19:04:23');
 
 
-
+update participants set accommodation='-1' where accommodation='n';
+update participants set accommodation='0' where accommodation='y';
+update college set college_id=10000+college_id;	
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

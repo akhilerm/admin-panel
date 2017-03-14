@@ -1,5 +1,5 @@
 <?php 
-require 'db_connect.php';
+require '../db_connect.php';
 session_create();
 if(session_check()==true)
 {
@@ -21,7 +21,7 @@ if(session_check()==true)
 		}
 	    $sqlins="INSERT INTO `participants` (`id`, `name`, `college`, `phone`, `gender`, `accommodation`, `email`) VALUES (NULL, 'invalid user', 'invalid college', '".$num."', 'mf', '-1', '".$email."');";
 		$con->query($sqlins)or die($sqlins);
-		header('Location:Registration.php?name='.$num.'&option=0');
+		header('Location:registration.php?input='.$num.'&option=0');
 	}
 }
 ?>
