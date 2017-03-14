@@ -27,7 +27,11 @@
 		            </ul>
 		            <ul>
 		              	<li class="text-info">College :</li>
-		              	<li id="college"><?php echo strtoupper($row["college"]) ?></li>
+		              	<li id="college">
+<?php 
+		              		echo strtoupper($row["college_name"]) 
+?>
+		              	</li>
 		            </ul>
 		            <ul>
 		            	<li class="text-info">Gender :</li>
@@ -61,11 +65,11 @@
 		}
 		else
 		{
-			header("location:../logout.php");
+			header("location:../search.php");
 		}
 	}
 	else
 	{
-		header("location:../logout.php");
+		header("location:../search.php");
 	}
 ?>

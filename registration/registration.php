@@ -77,11 +77,11 @@
    		$option=cleanup($_GET['option'],$con);	
    		if($option=='3')
    		{
-   			$query ="select * from participants where id in (select part_id from transactions where trans_id='$tag')";
+   			$query ="select * from participants as p,college as c where id in (select part_id from transactions where trans_id='$tag') and c.college_id=p.college";
    		}
    		else if($option=='0'  || $option=='1' || $option=='2')
    		{
-   			$query="select * from participants where email='$tag' or phone='$tag' or id='$tag'";
+   			$query="select * from participants as p,college as c where c.college_id=p.college and  (email='$tag' or phone='$tag' or id='$tag') ";
    		}
    		$result=$con->query($query);
    		if($result)

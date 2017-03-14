@@ -41,14 +41,17 @@ if(session_check()==true)
 								</ul>
 								<ul>
 									<li class="text-info">College *</li>
-									<select id="gender" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
-										<option>--select--</option>
+									<select id="college" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
 <?php
 										$query_college="select * from college";
 										$result_college=$con->query($query_college);
 										while($row_college=$result_college->fetch_assoc())
 										{
-											echo "<option value='".$row_college["college_id"]."'>".$row_college["college_name"]."</option>";
+											if($row_college['college_id']==$profile['college'])
+												echo "<option value='".$row_college["college_id"]."' selected>".$row_college["college_name"]."</option>";
+											else
+												echo "<option value='".$row_college["college_id"]."'>".$row_college["college_name"]."</option>";
+
 										}
 ?>
 									</select>
