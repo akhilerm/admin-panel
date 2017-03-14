@@ -8,9 +8,9 @@ function popupGeneratorForEditProfile()
 function getChangesFromPopupForEditProfile(name,email,phno,gender,acc)
 {
     window.document.getElementById('name').innerHTML=name;
-    window.document.getElementById('mail').innerHTML=email;
-    window.document.getElementById('phno').innerHTML=phno;
-    window.document.getElementById('gender').innerHTML=gender=="00"?'Female':'Male';
+    window.document.getElementById('email').innerHTML=email;
+    window.document.getElementById('phone').innerHTML=phno;
+    window.document.getElementById('gender').innerHTML=gender;
     window.document.getElementById('accomodation').innerHTML=acc;
     pageReload();
 }
@@ -48,7 +48,7 @@ function getId()
 
 function pageReload()
 {
-    window.open("Registration.php?input="+window.document.getElementById('email').innerHTML+"&option=1","_self");
+    window.open("../registration/registration.php?name="+window.document.getElementById('email').innerHTML+"&option=1","_self")
 }
 
 function Submit()
