@@ -33,8 +33,8 @@ if(session_check()==true)
                     <table  class="table table-bordered">
                         <tbody >
                         	<tr>
-								<th>Member&nbsp;&nbsp;&nbsp;</th>
-								<th>Phone&nbsp;&nbsp;&nbsp;</th>
+								<th>-----Member------&nbsp;&nbsp;&nbsp;</th>
+								<th>-----Phone-------&nbsp;&nbsp;&nbsp;</th>
                         	</tr>          
 <?php
 							$sql_get="select member_id from team where head_id='".$head_id."' and event_id='".$event_id."'";
@@ -49,7 +49,7 @@ if(session_check()==true)
 									{
 										while($row1=$result1->fetch_assoc())
 										{
-											echo "<tr> <th>".$row1["name"]."</th> <th>  ".$row1["phone"]."<th></tr>";
+											echo "<tr> <td>".$row1["name"]."</td> <td>  ".$row1["phone"]."<td></tr>";
 										}
 									}
 								}
