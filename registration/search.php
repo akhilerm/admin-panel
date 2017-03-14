@@ -18,14 +18,13 @@ if(session_check()==true)
 <?php
   		        include('../header.php');
 ?>			
-				<div class="header w3ls">
-					<h2>Conjura'17</h2>
-				</div>
+                
+                 <center>
 				<div class="main">
 					<div class="main-section agile">
 						<div class="login-form">
-							<h1 style="color: black;">SEARCH PARTICIPANT</h1>
-							<h4 style="color: black;">
+							<h4 class="colblue">Search Participant</h4><br>
+							<h5 class="colblue">
 <?php
 								if(isset($_SESSION['SEARCH_MSG']))
 				                {
@@ -33,29 +32,37 @@ if(session_check()==true)
 				                  unset($_SESSION['SEARCH_MSG']);
 				                }
 ?>								
-							</h4>
+							</h5>
 							<form action="registration.php" method="GET">
-								<ul>
-									<li class="text-info">NAME </li>
-									<li><input type="text" name="input" placeholder="" required id="input"></li>
-								</ul>
-								<ul>
-									<li class="text-info"></li>
-									<li class="se">
-										<select class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">
+								<div class="form-group">
+                                    <label for="input" align="left" class="control-label">Username</label>
+                                    <div class="">
+                                      <input type="text" class="form-control" name="username" id="input"  placeholder="" required>
+                                    </div>
+                                  </div>
+								    <div class="form-group">
+                                    <label for="input" align="left" class="control-label">Username</label>
+									
+									
+										<select class=" form-control time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">
 											<option>--select--</option>
-											<option value="0">Conjura_ID</option>
-											<option value="1">Phone_No</option>
-											<option value="2">Email</option>
-											<option value="3">Transaction_ID</option>
+											<option value="0">Conjura ID</option>
+											<option value="1">Phone No</option>
+											<option value="2">Email ID</option>
+											<option value="3">Transaction ID</option>
 										 </select>
-									</li>
-								</ul>
-								<input type="submit" value="SEARCH"/>
+									
+                                </div>
+								 <input type="submit" class="search-submit login-submit btn btn-default" value="SUBMIT">
 							</form>			
 						</div>
 					</div>
 				</div>
+               </center>
+                
+<?php
+        include('../footer.php');
+?>  
 			</body>
 		</html>
 <?php                                       
