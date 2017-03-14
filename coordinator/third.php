@@ -3,7 +3,7 @@ require_once("../db_connect.php");
 session_create();
 if(session_check()==true)
   	{
-    	if($_SESSION['LoggedINCoord']==1)
+    	if(session_get_coord()==1)
     	{
 			$event_id=$_SESSION['event_id'];
 			$part_id=$_GET['id'];

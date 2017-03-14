@@ -3,7 +3,7 @@
 	session_create();
 	if(session_check()==true)
   	{
-    	if($_SESSION['LoggedINCoord']==1)
+    	if(session_get_coord()==1)
     	{
 			$event_id=$_SESSION['event_id'];
 			$query = "UPDATE events SET lock_event =0 WHERE event_id='".$event_id."';";
