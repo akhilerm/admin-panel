@@ -40,6 +40,20 @@ if(session_check()==true)
 									<li><input type="text" id="phno" placeholder="" value="<?php echo $profile['phone'] ?>" required></li>
 								</ul>
 								<ul>
+									<li class="text-info">College *</li>
+									<select id="gender" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
+										<option>--select--</option>
+<?php
+										$query_college="select * from college";
+										$result_college=$con->query($query_college);
+										while($row_college=$result_college->fetch_assoc())
+										{
+											echo "<option value='".$row_college["college_id"]."'>".$row_college["college_name"]."</option>";
+										}
+?>
+									</select>
+								</ul>
+								<ul>
 									<li class="text-info">Gender *</li>
 									<li class="se" >
 										<select id="gender" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >

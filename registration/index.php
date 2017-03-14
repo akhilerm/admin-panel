@@ -9,7 +9,7 @@
 			<html>
 				<body>
 					<a  type="button" href="search.php" >Search</a>
-					<a  type="button" href="registerFresh.php" >Register</a>
+					<a  type="button" href="spotReg.php" >Register</a>
 				</body>
 			</html>
 <?php  		
