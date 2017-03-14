@@ -12,6 +12,7 @@
 				    <th>Trans ID</th>
 				    <th>Delete</th>
 				    <th>Members</th>
+				    <th>New Member</th>
 				    <th>Status</th>
 				</tr>
 <?php
@@ -30,9 +31,11 @@
 						  	if($row_event["team"]=='y')
 							{
 								echo"<td><input type= 'button' class= 'button1' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
+								echo"<td><input type= 'button' class= 'button1' value= 'New Member' onclick='newMembers()'></td>";								
 							}
 						  	else
 						  	{
+						        echo "<td style= 'color: black;'>Not Team Event</td>";
 						        echo "<td style= 'color: black;'>Not Team Event</td>";
 						    }     
 						    echo "<td style= 'color: black;'>Confirmed</td>";     	
@@ -55,9 +58,11 @@
 						  	if($row_event["team"]=='y')
 							{
 								echo"<td><input type= 'button' class= 'button1' value= 'Add/View ' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
+								echo"<td><input type= 'button' class= 'button1' value= 'New Member' onclick='newMembers()'></td>";								
 							}
 						  	else
 						  	{
+						    	echo "<td style= 'color: black;'>Not Team Event</td>";
 						    	echo "<td style= 'color: black;'>Not Team Event</td>";
 						    }  
 						    //to be changed   for payment confirmation

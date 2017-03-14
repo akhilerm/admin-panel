@@ -19,7 +19,7 @@ if(session_check()==true)
 			if($result->num_rows==0)
 				break;	
 		}
-	    $sqlins="INSERT INTO `participants` (`id`, `name`, `college`, `phone`, `gender`, `accommodation`, `email`) VALUES (NULL, 'invalid user', '100', '".$num."', 'm', '-1', '".$email."');";
+	    $sqlins="INSERT INTO `participants` (`id`, `name`, `college`, `phone`, `gender`, `accommodation`, `email`) VALUES (NULL, 'invalid user', '100', '".$num."', 'm_checkstatus(conn, identifier)', '-1', '".$email."');";
 		$result=$con->query($sqlins)or die($sqlins);
 		if($result)
 			header('Location:registration.php?input='.$num.'&option=0');

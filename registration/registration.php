@@ -105,10 +105,16 @@
 	   				</div>   
 <?php
 						include('eventTable.php');
+            $query_amt="select sum(amount) as sum from event_participants as ep, events as e,transactions as t where ((status!=1 and ep.trans_id=t.trans_id )or ep.trans_id='')  and ep.event_id=e.event_id and ep.part_id=".$row['id'];
+            $result_amt=$con->query($query_amt);
+            $row_amt=$result_amt->fetch_assoc();
+            echo "<h3 style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h3>";
 ?>
 						<div class="submitform">
 	      			<input type="submit" value="submit" onclick="Submit();">
 	    			</div>
+
+
 <?php
         include('../footer.php');
 ?>            
@@ -119,7 +125,7 @@
 	      else
 	      {
 	      	$_SESSION['SEARCH_MSG']="No records Found.";
-   				//header("location:search.php");
+   				header("location:search.php");
 	      }
    		}
    		else
