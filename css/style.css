@@ -5,6 +5,14 @@
     margin-top: 185px;
     background-color: white;
 }
+.login-form1{
+    border: 1px solid #42ab9e;
+    width:400px;
+    border-radius: 10px;
+    margin-top: 120px;
+    background-color: white;
+}
+target='_blank'
 
 .form-group{
     padding-left: 50px;

@@ -6,7 +6,7 @@
                         
             <center>
 	      	<div class="main-section agile">
-	        	<div class="login-form">
+	        	<div class="login-form1">
 	          	<h4 class="colblue">REGISTRATION</h1>
 	          	<form action="#" method="post">
                     <table class="table-reg table table-striped">

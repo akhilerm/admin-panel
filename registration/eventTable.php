@@ -28,7 +28,7 @@
 				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
 						  	if($row_event["team"]=='y')
 							{
-								echo"<td><input type= 'button' class= 'btn-eventdet btn-eventdet btn btn-default' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
+								echo"<td><input type= 'button' class= ' btn-eventdet btn btn-default' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
 								echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'New Member' onclick='newMembers()'></td>";								
 							}
 						  	else

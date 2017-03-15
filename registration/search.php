@@ -33,15 +33,15 @@ if(session_check()==true)
 				                }
 ?>								
 							</h5>
-							<form action="registration.php" method="GET">
+							<form action="registration.php" method="GET" style="padding:28px;">
 								<div class="form-group">
-                                    <label for="input" align="left" class="control-label">Username</label>
+                                    <label for="input" align="left" class="control-label">Field</label>
                                     <div class="">
                                       <input type="text" class="form-control" name="input" id="input"  placeholder="" required>
                                     </div>
                                   </div>
 								    <div class="form-group">
-                                    <label for="input" align="left" class="control-label">Username</label>
+                                    <label for="input" align="left" class="control-label">Criteria</label>
 									
 									
 										<select class=" form-control time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="option" id="option">

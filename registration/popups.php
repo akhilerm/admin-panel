@@ -14,34 +14,37 @@ if(session_check()==true)
 		<html>
 			<head>
 				<title>Conjura'17</title>
+                <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
 				<link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
 				<script src="../js/jquery-1.12.0.min.js"></script>
 				<script src="../js/popups.js"></script>
 			</head>
-			<body>
-				<div class="header w3ls">
-					<h2>Conjura'17</h2>
-				</div>
+			<body>   
+                <center>
+				
+					<h3 class="colblue">Edit Details</h3>
+				
 				<div class="main">
 					<div class="main-section agile">
-						<div class="login-form" st>
-							<h1 style="color: black;">Edit-Profile</h1>
+						<div>
+							
 							<form action="#" method="post">
-								<ul>
-									<li class="text-info">NAME *</li>
-									<li><input type="text" id="name" placeholder="" value="<?php echo $profile['name'] ?>" ></li>
-								</ul>
-								<ul>
-									<li class="text-info">Email ID *</li>
-									<li><input type="text" id="email" placeholder="" value="<?php echo $profile['email'] ?>" ></li>
-								</ul>
-								<ul>
-									<li class="text-info">Phone Number *</li>
-									<li><input type="text" id="phno" placeholder="" value="<?php echo $profile['phone'] ?>" ></li>
-								</ul>
-								<ul>
-									<li class="text-info">College *</li>
-									<select id="college" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
+								<div class="form-group">
+                                    <label for="name" align="left" class="control-label"> Name*</label>
+									<input class="form-control" type="text" id="name" placeholder="" value="<?php echo $profile['name'] ?>"></input>
+								</div>
+				
+								<div class="form-group">
+									<label for="email" align="left" class="control-label">Email*</label>
+									<input class="form-control" type="text" id="email" placeholder="" value="<?php echo $profile['email'] ?>" >
+								</div>
+								<div class="form-group">
+									<label for="phno" align="left" class="control-label">Phone No</label>
+									<input class="form-control" type="text" id="phno" placeholder="" value="<?php echo $profile['phone'] ?>" >
+								</div>
+								<div class="form-group">
+									<label for="college" align="left" class="control-label">College</label>
+									<select class="form-control" id="college" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
 <?php
 										$query_college="select * from college";
 										$result_college=$con->query($query_college);
@@ -55,21 +58,21 @@ if(session_check()==true)
 										}
 ?>
 									</select>
-								</ul>
-								<ul>
-									<li class="text-info">Gender *</li>
-									<li class="se" >
-										<select id="gender" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
+								</div>
+								<div class="form-group">
+									<label for="gender" align="left" class="control-label">Gender</label>
+									
+										<select class="form-control" id="gender" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]" >
 											<option>--select--</option>
 											<option  value="f" <?php if($profile['gender']=='f'){echo "selected";} ?>>Female</option>
 											<option  value="m" <?php if($profile['gender']=='m'){echo "selected";} ?>>Male</option>
 										</select>
-									</li>
-								</ul>
-			                    <ul>
-									<li class="text-info">Accommodation *</li>
-									<li class="se" >
-										<select id="accommodation" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]">
+									
+								</div>
+			                    <div class="form-group">
+									<label for="accommodation" align="left" class="control-label">Accommodation</label>
+									
+										<select class="form-control" id="accommodation" class="time-dropdown form-dropdown validate[required, limitDate]" id="min_15" name="q15_departureDatetime15[min]">
 											<option>--select--</option>
 											<option value="-1" <?php if($profile['accommodation']=='-1'){echo "selected";} ?>>Not Needed</option>
 											<option value="0" <?php if($profile['accommodation']=='0'){echo "selected";} ?>>Needed But Not Paid</option>
@@ -78,13 +81,14 @@ if(session_check()==true)
 											<option value="3" <?php if($profile['accommodation']=='3'){echo "selected";} ?>>Paid For 3</option>
 											<option value="4" <?php if($profile['accommodation']=='4'){echo "selected";} ?>>Paid For 4</option>
 										</select>
-									</li>
-								 </ul>
-								<input type="edit" value="SUBMIT" onclick="ChangeParent();">
+									
+								 </div>
+								<input type="edit" class="btn-eventdet btn btn-default" value="SUBMIT" onclick="ChangeParent();">
 							</form>
 						</div>
 					</div>
 				</div>
+                </center>
 			</body>
 		</html>
 <?php

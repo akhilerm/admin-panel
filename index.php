@@ -43,7 +43,7 @@
                 }
             ?>
           </h5>
-          <form action="loginVerification.php" method="post" class="form-horizontal">
+          <form action="loginVerification.php" method="post" style="padding:28px;">
              <div class="form-group">
                 <label for="username" align="left" class="control-label">Username</label>
                 <div class="">

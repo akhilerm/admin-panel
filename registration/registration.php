@@ -54,17 +54,18 @@
             {
               $row_amt=$result_amt->fetch_assoc();
               $_SESSION['SUM']=$row_amt['sum'];
-              echo "<h3 style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h3>";
+              echo "<h4 class='colblue' style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h4>";
             } 
             else
-              echo "<h3 style='text-align:center'>Amount To Be Collected :0</h3>";
+              echo "<h4 class='colblue' style='text-align:center'>Amount To Be Collected :0</h4>";
 ?>
 						<div class="submitform">
 	      			<input type="submit" class="btn-eventdet btn btn-default" value="submit" onclick="Submit();">
 	    			</div>
+                    <br>
                  <footer class="footer-relative">
                   <div class="container">
-                    <p class="text-muted text-center">© Conjura'17</p>
+                    <p class="text-muted text-center">Conjura'17</p>
                   </div>
                 </footer>
                 </center>
