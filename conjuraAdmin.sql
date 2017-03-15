@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `college` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10000;
 
 INSERT INTO `college` (`college_id`, `college_name`) VALUES
+(100, 'Invalid College'),
 (10001, 'Sanmuganathan Engineering College'),
 (10002, 'ABV IIITM Gwalior'),
 (10003, 'ACE'),
@@ -1853,7 +1854,6 @@ INSERT INTO `transactions` (`sno`, `part_id`, `amt`, `trans_id`, `time`) VALUES
 
 update participants set accommodation='-1' where accommodation='n';
 update participants set accommodation='0' where accommodation='y';
-update college set college_id=10000+college_id;	
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
