@@ -3,41 +3,45 @@
    	{
 ?>
    		<div class="main">
+                        
+            <center>
 	      	<div class="main-section agile">
 	        	<div class="login-form">
-	          	<h1>REGISTRATION</h1>
+	          	<h4 class="colblue">REGISTRATION</h1>
 	          	<form action="#" method="post">
-	            	<ul>
-	              		<li class="text-info">Conjura ID :</li>
-	              		<li id="id"><?php echo $row['id']; ?></li>
-					</ul>
-		            <ul>
-		              	<li class="text-info">Name :</li>
-		              	<li id="name"><?php echo strtoupper($row['name']); ?></li>              
-		            </ul>
-		            <ul>
-		             	<li class="text-info">Email :</li>
-		              	<li id="email"><?php echo $row["email"]; ?></li>
-		            </ul>
-		            <ul>
-		              	<li class="text-info">Phone Number :</li>
-		              	<li id="phone"><?php echo $row["phone"]; ?></li>
-		            </ul>
-		            <ul>
-		              	<li class="text-info">College :</li>
-		              	<li id="college">
+                    <table class="table-reg table table-striped">
+                    <tbody>
+	            	<tr>
+	              		<td class="text-info">Conjura ID :</td>
+	              		<td id="id"><?php echo $row['id']; ?></td>
+					</tr>
+		            <tr>
+		              	<td class="text-info">Name :</td>
+		              	<td id="name"><?php echo strtoupper($row['name']); ?></td>              
+		            </tr>
+		            <tr>
+		             	<td class="text-info">Email :</td>
+		              	<td id="email"><?php echo $row["email"]; ?></td>
+		            </tr>
+		            <tr>
+		              	<td class="text-info">Phone Number :</td>
+		              	<td id="phone"><?php echo $row["phone"]; ?></td>
+		            </tr>
+		            <tr>
+		              	<td class="text-info">College :</td>
+		              	<td id="college">
 <?php 
 		              		echo strtoupper($row["college_name"]) 
 ?>
-		              	</li>
-		            </ul>
-		            <ul>
-		            	<li class="text-info">Gender :</li>
-		            	<li id="gender"><?php echo strtoupper($row['gender']); ?></li>
-		            </ul>
-		            <ul>
-		            	<li class="text-info">Accommodation :</li>
-		              	<li id="accomodation">
+		              	</td>
+		            </tr>
+		            <tr>
+		            	<td class="text-info">Gender :</td>
+		            	<td id="gender"><?php echo strtoupper($row['gender']); ?></td>
+		            </tr>
+		            <tr>
+		            	<td class="text-info">Accommodation :</td>
+		              	<td id="accomodation">
 <?php 
 		              		if($row["accommodation"]==-1)
 		              			echo "Not Needed";
@@ -52,12 +56,15 @@
 		              		else if($row["accommodation"]==4)
 		              			echo "Paid For 4 Days";
 ?>
-		           		</li>                
-		            </ul>
-		            <input type="button" class="button1" value="Edit" onclick="popupGeneratorForEditProfile();">
+		           		</td>                
+		            </tr>
+                    </tbody>
+                    </table>
+		            <input type="button" class="btn-regdet btn btn-default" value="Edit" onclick="popupGeneratorForEditProfile();">
 	          </form>
 	        </div>
 	      </div>
+        </center>
 	    </div>
 <?php	    		
 		}

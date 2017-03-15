@@ -2,8 +2,8 @@
 	  	if(session_get_reg()==1)
 	  	{
 ?>
-			<table class="table table-bordered">
-				<tr>
+			<table class="table-eve table table-striped table-bordered">
+				<tr class="colblue">
 					<th>Event name</th>
 				    <th>Event amount</th>
 				    <th>Trans amount</th>
@@ -28,8 +28,8 @@
 				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
 						  	if($row_event["team"]=='y')
 							{
-								echo"<td><input type= 'button' class= 'button1' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
-								echo"<td><input type= 'button' class= 'button1' value= 'New Member' onclick='newMembers()'></td>";								
+								echo"<td><input type= 'button' class= 'btn-eventdet btn-eventdet btn btn-default' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
+								echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'New Member' onclick='newMembers()'></td>";								
 							}
 						  	else
 						  	{
@@ -52,11 +52,11 @@
 				  			echo "<tr>";
 				  		  	echo "<td style='color: black;'>".$row_event["event_display"]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
-				  			echo"<td><input type= 'button' class= 'button1'  value= 'Delete' onclick=\"deleteFromEvent('".$row_event["event_id"]."','".$row['id']."');\" id=".$row_event['event_id']."></td>";              	  	
+				  			echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default'  value= 'Delete' onclick=\"deleteFromEvent('".$row_event["event_id"]."','".$row['id']."');\" id=".$row_event['event_id']."></td>";              	  	
 						  	if($row_event["team"]=='y')
 							{
-								echo"<td><input type= 'button' class= 'button1' value= 'Add/View ' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
-								echo"<td><a type= 'button' class= 'button1'  href='../registration/spotReg.php' target='_blank'>New Member</a></td>";								
+								echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'Add/View ' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
+								echo"<td><a type= 'button' class= 'btn-eventdet btn btn-default' href='../registration/spotReg.php' target='_blank' value= 'New Member' >New Member</a></td>";								
 							}
 						  	else
 						  	{

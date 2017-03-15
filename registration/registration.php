@@ -7,64 +7,7 @@
     <script src="../js/registration.js"></script>
     <script src="../js/jquery-1.12.0.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <style>
-      .submitform input[type="submit"] {
-      font-size: 1em;
-      padding: .8em 1em;
-      text-transform: capitalize;
-      border: none;
-      outline: none;
-      background:#121838;
-      color: #fff;
-      cursor: pointer;
-      width: 18%;
-      font-family: 'Ubuntu', sans-serif;
-      margin: 0 0 0 3em;
-      position:relative;
-      left: 40%;
-      text-align: center;
-      }
-      .button{
-      background-color: #9494b8;
-      border: none;
-      color:white;
-      padding: 10px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 13px;
-      margin: 1px 1px;
-      cursor: pointer;
-      align-self: center;
-      position: relative;
-      left: 30%;
-      width: 100px;
-      }
-      .button1{
-      background-color: #121838;
-      border: none;
-      color:white;
-      padding: 10px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 11px;
-      margin: 1px 1px;
-      cursor: pointer;
-      align-self: center;
-      position: relative;
-      left: 30%;
-      }
-      .event{
-      display: inline-block;
-      }
-      .container{
-      color: black;
-      }
-      td{
-      color: white;
-      }
-    </style>
+  
   </head>
 <?php
   require('../db_connect.php');
@@ -92,17 +35,16 @@
 
           include('../header.php');
 ?>
-					<body style="padding-bottom:3%;">
-	    			<div class="header w3ls">
-	      			<h2 style="color: black;"><img src="../images/logo.png" height="90px" width="90px">Conjura'17</h2>
-	    			</div>
+					<body>
+                    <center>
+	    			
 <?php
 						include('profile.php');
 ?>	 
 						<div class="container" style="padding-top: 30px">
-	      			<p style="font-size:20px;">EVENTS
-	        			<input type="button	" class="button1" value="+Add Event" style="position:relative; left: 85%;" onclick="popupGeneratorForAddEvents();">
-	      			</p>
+                            <h4 class="colblue">EVENTS</h4>
+	        			<input type="button" class="btn-regdet btn btn-default" value="+Add Event" style="position:relative;" onclick="popupGeneratorForAddEvents();"></input>
+	      			
 	   				</div>   
 <?php
 						include('eventTable.php');
@@ -117,11 +59,14 @@
               echo "<h3 style='text-align:center'>Amount To Be Collected :0</h3>";
 ?>
 						<div class="submitform">
-	      			<input type="submit" value="submit" onclick="Submit();">
+	      			<input type="submit" class="btn-eventdet btn btn-default" value="submit" onclick="Submit();">
 	    			</div>
-<?php
-        include('../footer.php');
-?>            
+                 <footer class="footer-relative">
+                  <div class="container">
+                    <p class="text-muted text-center">© Conjura'17</p>
+                  </div>
+                </footer>
+                </center>
 	  			</body>
 				</html>	 	   							
 <?php
