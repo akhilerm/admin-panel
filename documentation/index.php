@@ -56,6 +56,21 @@ function showUser(str)
     xmlhttp.open("GET","getDoc.php?q="+str,true);
     xmlhttp.send();
 }
+/*$(document).ready(function(){
+$('#company3').on('change',function(){
+            var cmID = $(this).val();
+            if(cmID){
+              $.ajax({
+                type:'POST',
+                url:'drive_course_list.php',
+                data:'cmpid='+cmID,
+                success:function(html){
+                  $('#course3').html(html);
+                }
+              }); 
+            }
+          });
+});*/
 </script>
 <style>
 	#event_drop{
@@ -78,29 +93,29 @@ function showUser(str)
         if($result){
             $select= '<select name="select" id="event_drop" onchange="showUser(this.value)">';
             while($row=mysqli_fetch_array($result)){
-            $select.='<option value="'.$row[1].'">'.$row[0].'</option>';
+                $select.='<option value="'.$row[1].'">'.$row[0].'</option>';
+            }
         }
-    }
-    $select.='</select>';
-    echo $select;
-    $query="select name,participants.id,college,event_participants_spot.attendance FROM participants,event_participants_spot,events,team WHERE events.event_id=event_participants_spot.event_id AND events.event_name='agnee' AND (event_participants_spot.part_id=participants.id OR (event_participants_spot.part_id=team.head_id AND team.member_id=participants.id))";
-    $result = $con->query($query);
-    echo "<div id='event_id'><table>
-    <tr>
-    <th>Participant ID</th>
-    <th>Name</th>
-    <th>College</th>
-    <th>Status</th>
-    </tr>";
-    while($row = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
-        echo "<td>" . $row[1] . "</td>";
-        echo "<td>" . $row[2] . "</td>";
-        echo "<td>" . $row[3] . "</td>";
-        echo "</tr>";
-    }
-    echo "</table></div>";
+        $select.='</select>';
+        echo $select;
+        $query="select name,participants.id,college,event_participants_spot.attendance FROM participants,event_participants_spot,events,team WHERE events.event_id=event_participants_spot.event_id AND events.event_name='agnee' AND (event_participants_spot.part_id=participants.id OR (event_participants_spot.part_id=team.head_id AND team.member_id=participants.id))";
+        $result = $con->query($query);
+        echo "<div id='event_id'><table>
+        <tr>
+        <th>Participant ID</th>
+        <th>Name</th>
+        <th>College</th>
+        <th>Status</th>
+        </tr>";
+        while($row = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . $row[0] . "</td>";
+            echo "<td>" . $row[1] . "</td>";
+            echo "<td>" . $row[2] . "</td>";
+            echo "<td>" . $row[3] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table></div>";
 ?>
     <form>
         <input type="text" id="search_area" size="30" onkeyup="showResult(this.value)">
