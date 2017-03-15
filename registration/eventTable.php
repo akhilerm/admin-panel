@@ -56,7 +56,7 @@
 						  	if($row_event["team"]=='y')
 							{
 								echo"<td><input type= 'button' class= 'button1' value= 'Add/View ' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
-								echo"<td><input type= 'button' class= 'button1' value= 'New Member' onclick='newMembers()'></td>";								
+								echo"<td><a type= 'button' class= 'button1'  href='../registration/spotReg.php' target='_blank'>New Member</a></td>";								
 							}
 						  	else
 						  	{
