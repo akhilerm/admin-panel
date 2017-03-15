@@ -19,7 +19,6 @@ require_once("../db_connect.php");
 			    echo "</tr>";
 			}
 			echo "</table>";
-			mysqli_close($conn);
 		}
 		else
 			header("location:../index.php");
