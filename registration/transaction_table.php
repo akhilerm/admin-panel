@@ -6,7 +6,7 @@
 				<tr class="colblue">
 					<th>Transaction ID</th>
 				    <th>Transaction Amount</th>
-				    <th>Amount To Be Paid</th>
+				    <th>Difference In Amount</th>
 				    <th>Status</th>
 				</tr>
 <?php
@@ -19,27 +19,23 @@
 				  		while($row_event=$result->fetch_assoc())
 						{
 				  			echo "<tr>";
-				  		    echo "<td style='color: black;'>".$row_event[""]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
-				  		    if($row_event['lock_event']==0)
-				  		    	echo "<td>Registration Open</td>";
-				  		    else if($row_event['lock_event']==1)
-				  		    	echo "<td>Registration Closed</td>";
-				  		    echo "</td>";
-				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
-				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
-						  	if($row_event["team"]=='y')
+				  		    echo "<td style='color: black;'>".$row_event["trans_id"]."</td><td style='color: black;'>".$row_event["amt"]."</td>";
+				        	echo "<td style= 'color: black;'>".$row_event["amt_diff"]."</td>";	
+						  	if($row_event["status"]==-1)
 							{
-								echo"<td><input type= 'button' class= ' btn-eventdet btn btn-default' value= 'Add/View' onclick= \"popupGeneratorForAddMembers('".$row_event["event_id"]."','".$row['id']."');\"></td>";
-								echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'New Member' onclick='newMembers()'></td>";								
+								echo "<td style= 'color: black;'>Amount Not Paid</td>";							
 							}
-						  	else
+						  	else if($row_event["status"]==0)
 						  	{
-						        echo "<td style= 'color: black;'>Not Team Event</td>";
-						        echo "<td style= 'color: black;'>Not Team Event</td>";
+						        echo "<td style= 'color: black;'>Amount Received But<br>Not Complete</td>";
+						    }
+						    else if($row_event["status"]==1)
+						  	{
+						        echo "<td style= 'color: black;'>Transaction Confirmed</td>";
 						    }     
-						    echo "<td style= 'color: black;'>Participation <br>Confirmed</td>";     	
 						    echo "</tr>";
 					  	}
+					  	echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'Confirm All transactions' onclick='newMembers()'></td>";	
 				  	} 
 				}
 			echo "</table>";
