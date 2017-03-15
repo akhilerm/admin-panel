@@ -44,9 +44,6 @@
                 </script>
             </head>
  	        <body>
-	            <?php
-	               CloseCon($conn);
-	            ?>
 	            <div>
 	               <p id="total"></p>
 	            </div>
