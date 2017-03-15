@@ -73,14 +73,15 @@
 						    	echo "<td style= 'color: black;'>Not Team Event</td>";
 						    	echo "<td style= 'color: black;'>Not Team Event</td>";
 						    }  
-						    //to be changed   for payment confirmation
-						    if(1)
+						    
+						    if(empty($row_event['trans_id']) || $row_event['status']==-1)
 						    {
-						    	echo "<td style= 'color: black;'>Amount Paid</td>";     	
+						    	echo "<td style= 'color: black;'>Amount Not Paid</td>";     	
 						    }
-						    else
-						    	echo "<td style= 'color: black;'>Amount Not Confirmed</td>";     	
-						    //------------
+						    else if(!empty($row_event['trans_id']) && $row_event['status']==1)
+						    	echo "<td style= 'color: black;'>Amount Confirmed</td>";
+						    else if(!empty($row_event['trans_id']) && $row_event['status']==0)
+						    	echo "<td style= 'color: black;'>Amount Paid But Not Confirmed</td>";
 						    echo "</tr>";
 					  	}
 				  	} 

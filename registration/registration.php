@@ -40,6 +40,7 @@
 	    			
 <?php
 						include('profile.php');
+            include('transaction_table.php');
 ?>	 
 						<div class="container" style="padding-top: 30px">
                             <h4 class="colblue">EVENTS</h4>
