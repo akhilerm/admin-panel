@@ -21,7 +21,6 @@ if(session_check()==true)
 <?php
 	        $head_id=cleanup($_GET["id"],$con);
             $event_id=cleanup($_GET["eid"],$con);
-        echo $event_id;
 ?>
             
 		</h6>

@@ -29,15 +29,15 @@ if(session_check()==true)
 							<form action="#" method="post">
 								<ul>
 									<li class="text-info">NAME *</li>
-									<li><input type="text" id="name" placeholder="" value="<?php echo $profile['name'] ?>" required></li>
+									<li><input type="text" id="name" placeholder="" value="<?php echo $profile['name'] ?>" ></li>
 								</ul>
 								<ul>
 									<li class="text-info">Email ID *</li>
-									<li><input type="text" id="email" placeholder="" value="<?php echo $profile['email'] ?>" required></li>
+									<li><input type="text" id="email" placeholder="" value="<?php echo $profile['email'] ?>" ></li>
 								</ul>
 								<ul>
 									<li class="text-info">Phone Number *</li>
-									<li><input type="text" id="phno" placeholder="" value="<?php echo $profile['phone'] ?>" required></li>
+									<li><input type="text" id="phno" placeholder="" value="<?php echo $profile['phone'] ?>" ></li>
 								</ul>
 								<ul>
 									<li class="text-info">College *</li>

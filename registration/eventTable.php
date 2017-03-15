@@ -1,6 +1,4 @@
 <?php
-	if(session_check()==true)
-    {
 	  	if(session_get_reg()==1)
 	  	{
 ?>
@@ -78,7 +76,6 @@
 				  	} 
 				}
 			echo "</table>";
-		}
-	}			
+		}			
 ?>
   

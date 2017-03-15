@@ -89,6 +89,7 @@
    			if($result->num_rows>0)
 	      {
 	      	$row=$result->fetch_assoc();
+
           include('../header.php');
 ?>
 					<body style="padding-bottom:3%;">
@@ -105,16 +106,19 @@
 	   				</div>   
 <?php
 						include('eventTable.php');
-            $query_amt="select sum(amount) as sum from event_participants as ep, events as e,transactions as t where ((status!=1 and ep.trans_id=t.trans_id )or ep.trans_id='')  and ep.event_id=e.event_id and ep.part_id=".$row['id'];
+            $query_amt="select sum(amount) as sum from event_participants as ep,events as e where ep.event_id=e.event_id and  ep.trans_id not in (select trans_id from transactions where  status=1) and ep.part_id=".$row['id'];
             $result_amt=$con->query($query_amt);
-            $row_amt=$result_amt->fetch_assoc();
-            echo "<h3 style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h3>";
+            if($result_amt->num_rows>0)
+            {
+              $row_amt=$result_amt->fetch_assoc();
+              echo "<h3 style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h3>";
+            } 
+            else
+              echo "<h3 style='text-align:center'>Amount To Be Collected :0</h3>";
 ?>
 						<div class="submitform">
 	      			<input type="submit" value="submit" onclick="Submit();">
 	    			</div>
-
-
 <?php
         include('../footer.php');
 ?>            

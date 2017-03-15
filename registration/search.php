@@ -37,7 +37,7 @@ if(session_check()==true)
 								<div class="form-group">
                                     <label for="input" align="left" class="control-label">Username</label>
                                     <div class="">
-                                      <input type="text" class="form-control" name="username" id="input"  placeholder="" required>
+                                      <input type="text" class="form-control" name="input" id="input"  placeholder="" required>
                                     </div>
                                   </div>
 								    <div class="form-group">
