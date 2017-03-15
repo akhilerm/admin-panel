@@ -33,12 +33,12 @@ function deleteFromEvent(name,pid)
 
 function popupGeneratorForAddMembers(eid,id)
 {
-    add_mambers=window.open('../registration/addMember.php?id='+id+"&eid="+eid,'Add_Members','height=600 , width=500');
+    add_mambers=window.open('../registration/addMember.php?id='+id+"&eid="+eid,'Add_Members','height=500 , width=400');
 }
 
 function newMembers()
 {
-    add_mambers=window.open('../registration/spotReg.php','height=600 , width=500');
+    add_mambers=window.open('../registration/spotReg.php','height=500 , width=400');
 }
 
 function popupGeneratorForAddEvents()
