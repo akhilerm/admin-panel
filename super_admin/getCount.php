@@ -5,10 +5,10 @@
   	{
     	if(session_get_admin()==1)
     	{
-			$query = "SELECT * FROM events";
+			$query = "SELECT * FROM participants";
 			$result = $con->query($query);
 			$no=mysqli_num_rows($result);
-			echo "Total Number of Events ".$no;
+			echo "<h3>Total Number of Participants : ".$no."<h3>";
 		}
 		else
 			header("location:../index.php");

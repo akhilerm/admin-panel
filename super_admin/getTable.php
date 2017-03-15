@@ -5,13 +5,13 @@ require_once("../db_connect.php");
   	{
     	if(session_get_admin()==1)
     	{
-			$query="SELECT events.event_name,count(event_participants_spot.part_id) FROM events,event_participants_spot where events.event_id=event_participants_spot.event_id";
+			$query="SELECT events.event_name,count(event_participants_spot.part_id) FROM events left join event_participants_spot on events.event_id=event_participants_spot.event_id group by events.event_id" ;
 			$result = $con->query($query);
-			echo "<table>
-			<tr>
-			<th>Event</th>
-			<th>Participant Count</th>
-			</tr>";
+			echo "<table class='super-admin-table'>
+				  <tr>
+				    <th>Event</th>
+				    <th>Participant Count</th>
+				  </tr>";
 			while($row = mysqli_fetch_array($result)) {
 			    echo "<tr>";
 			    echo "<td>" . $row[0] . "  </td>";
