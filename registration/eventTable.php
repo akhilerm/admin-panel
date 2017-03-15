@@ -42,7 +42,7 @@
 						        echo "<td style= 'color: black;'>Not Team Event</td>";
 						        echo "<td style= 'color: black;'>Not Team Event</td>";
 						    }     
-						    echo "<td style= 'color: black;'>Confirmed</td>";     	
+						    echo "<td style= 'color: black;'>Participation <br>Confirmed</td>";     	
 						    echo "</tr>";
 					  	}
 				  	} 
