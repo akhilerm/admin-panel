@@ -6,7 +6,7 @@ if(session_check()==true)
 	if(session_get_reg()==1)
 	{
 		$part_id=cleanup($_GET["id"],$con);
-		$sql_sel="select * from event_participants  where part_id='".$part_id."'";
+		$sql_sel="select * from event_participants as ep,events as e where  e.event_id=ep.event_id and lock_event=0 and part_id='".$part_id."'";
 		$result=$con->query($sql_sel);
 		if($result->num_rows>0)
 		{
@@ -21,16 +21,16 @@ if(session_check()==true)
 
 			while($row=$result->fetch_assoc())
 			{
+
 				$sno=$row["sno"];
 				$p_id=$row["part_id"];
 				$e_id=$row["event_id"];
 				$paid=$row["paid"];
 				$sql_ins="insert into event_participants_spot(`part_id`, `event_id`, `trans_id`) values('".$p_id."','".$e_id."','".$t_id."')";
 				$con->query($sql_ins);
-		        
 			}
 		}
-		$sql_del="delete from event_participants where part_id='".$part_id."'";
+		$sql_del="delete from event_participants where event_id not in (select event_id from events where lock_event=1) and  part_id='".$part_id."'";
 		$con->query($sql_del);                                       
 		header('Location:registration.php?input='.$part_id.'&option=0');	
     }
