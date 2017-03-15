@@ -7,12 +7,29 @@
         {
 ?>
 <html>
+<head>
+            	
+		<title>Conjura'17</title>
+	
+		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="../js/Registration.js"></script>
+		<!--web-fonts-->
+		<!--<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>-->
+		<script src="../js/jquery-1.12.0.min.js"></script>
+		
+		<!--web-fonts-->
+		
+</head>
 <body>
 <script>
 function showResult(str) {
     if (str.length==0) {
-        document.getElementById("livesearch").innerHTML="";
-        document.getElementById("livesearch").style.border="0px";
+        document.getElementById("event_part").innerHTML="";
+       
         return;
     }
     if (window.XMLHttpRequest) {
@@ -24,8 +41,8 @@ function showResult(str) {
     }
     xmlhttp.onreadystatechange=function() {
         if (this.readyState==4 && this.status==200) {
-            document.getElementById("livesearch").innerHTML=this.responseText;
-            document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+            document.getElementById("event_part").innerHTML=this.responseText;
+            
         }
     }
     xmlhttp.open("GET","liveSearch.php?q="+str,true);
@@ -72,21 +89,7 @@ $('#company3').on('change',function(){
           });
 });*/
 </script>
-<style>
-	#event_drop{
-		width:100%;
-		height:40px;
-	}
-	#event_part{
-		width:100%;
-		border:1px solid;
-		color:green;
-		margin:20px;
-	}
-	#search_area{
-		width:100%;
-	}
-</style>
+
 <?php 
         $query="SELECT event_name,event_id FROM events";
         $result = $con->query($query);
@@ -98,29 +101,13 @@ $('#company3').on('change',function(){
         }
         $select.='</select>';
         echo $select;
-        $query="select name,participants.id,college,event_participants_spot.attendance FROM participants,event_participants_spot,events,team WHERE events.event_id=event_participants_spot.event_id AND events.event_name='agnee' AND (event_participants_spot.part_id=participants.id OR (event_participants_spot.part_id=team.head_id AND team.member_id=participants.id))";
-        $result = $con->query($query);
-        echo "<div id='event_id'><table>
-        <tr>
-        <th>Participant ID</th>
-        <th>Name</th>
-        <th>College</th>
-        <th>Status</th>
-        </tr>";
-        while($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>" . $row[0] . "</td>";
-            echo "<td>" . $row[1] . "</td>";
-            echo "<td>" . $row[2] . "</td>";
-            echo "<td>" . $row[3] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table></div>";
+        echo '<input type="text" id="search_area" size="30" onkeyup="showResult(this.value)">';
+        echo "<div id='event_part'></div>";
+       
 ?>
-    <form>
-        <input type="text" id="search_area" size="30" onkeyup="showResult(this.value)">
-        <div id="livesearch"></div>
-    </form>
+   
+        
+       
 </body>
 </html>
 <?php

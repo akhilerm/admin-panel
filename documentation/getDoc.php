@@ -8,7 +8,8 @@
 			$q=$_GET["q"];
 			$query="select name,participants.id,college,event_participants_spot.attendance FROM participants,event_participants_spot,events,team WHERE events.event_id=event_participants_spot.event_id AND events.event_name='".$q."' AND (event_participants_spot.part_id=participants.id OR (event_participants_spot.part_id=team.head_id AND team.member_id=participants.id))";
 			$result = $con->query($query);
-			echo "<div id='event_id' style:'margin:10px;'><table  style='width:100%;color:black;border:1px solid;'>
+			echo "
+			<table class='super-admin-table documentation-table'>
 			<tr>
 			<th>Participant ID</th>
 			<th>Name</th>
@@ -23,7 +24,7 @@
 			    echo "<td>" . $row[3] . "</td>";
 			    echo "</tr>";
 			}
-			echo "</table></div>";
+			echo "</table>";
 		}
 		else
 			header("location:../index.php");

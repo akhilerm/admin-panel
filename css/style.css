@@ -195,3 +195,9 @@ div.super-admin-tabs button.active {
     width:30%;
     border-bottom: 1px solid #ddd;
 }
+.documentation-table th,td {
+    text-align: left;
+    padding:5px;
+    width:25%;
+    border-bottom: 1px solid #ddd;
+}
