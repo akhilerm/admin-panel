@@ -4,9 +4,10 @@
 ?>
 			<table class="table-eve table table-striped table-bordered">
 				<tr class="colblue">
-					<th>Event name</th>
-				    <th>Event amount</th>
-				    <th>Trans amount</th>
+					<th>Event Name</th>
+				    <th>Event Amount</th>
+				    <th>Event Status</th>
+				    <th>Trans Amount</th>
 				    <th>Trans ID</th>
 				    <th>Delete</th>
 				    <th>Members</th>
@@ -24,6 +25,11 @@
 						{
 				  			echo "<tr>";
 				  		    echo "<td style='color: black;'>".$row_event["event_display"]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
+				  		    if($row_event['lock_event']==0)
+				  		    	echo "<td>Registration Open</td>";
+				  		    else if($row_event['lock_event']==1)
+				  		    	echo "<td>Registration Closed</td>";
+				  		    echo "</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
 				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
 						  	if($row_event["team"]=='y')
@@ -51,6 +57,10 @@
 						{
 				  			echo "<tr>";
 				  		  	echo "<td style='color: black;'>".$row_event["event_display"]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
+				        	if($row_event['lock_event']==0)
+				  		    	echo "<td>Registration Open</td>";
+				  		    else if($row_event['lock_event']==1)
+				  		    	echo "<td>Registration Closed.<br>Contact Coordiator</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
 				  			echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default'  value= 'Delete' onclick=\"deleteFromEvent('".$row_event["event_id"]."','".$row['id']."');\" id=".$row_event['event_id']."></td>";              	  	
 						  	if($row_event["team"]=='y')

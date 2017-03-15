@@ -15,7 +15,7 @@ if(session_check()==true)
 			if(!$next_num)
 				echo "unsuccessful";
 			$row_num=$next_num->fetch_assoc();
-			$t_id=15000+$row_num['a'];
+			$t_id=15000+$row_num['a'];              // not considering stored transaction
 			$query_trans="insert into transactions(part_id,amt,trans_id,status) values (".$part_id.",".$_SESSION['SUM'].",".$t_id.",1)";
 			$result_trans=$con->query($query_trans) or die(mysqli_error($con));
 

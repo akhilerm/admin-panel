@@ -48,7 +48,7 @@
 	   				</div>   
 <?php
 						include('eventTable.php');
-            $query_amt="select sum(amount) as sum from event_participants as ep,events as e where ep.event_id=e.event_id and  ep.trans_id not in (select trans_id from transactions where  status=1) and ep.part_id=".$row['id'];
+            $query_amt="select sum(amount) as sum from event_participants as ep,events as e where ep.event_id=e.event_id and lock_event=0 and  ep.trans_id not in (select trans_id from transactions where  status=1) and ep.part_id=".$row['id'];
             $result_amt=$con->query($query_amt);
             if($result_amt->num_rows>0)
             {
