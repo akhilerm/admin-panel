@@ -35,10 +35,12 @@
 						    }     
 						    echo "</tr>";
 					  	}
-					  	echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'Confirm All transactions' onclick='newMembers()'></td>";	
 				  	} 
 				}
 			echo "</table>";
+			echo "* Click The 'Confirm All transactions' only once all the difference in amount is collected<br>";
+		  	echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default' value= 'Confirm All transactions' onclick='newMembers()'></td>";	
+
 		}			
 ?>
   

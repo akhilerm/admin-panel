@@ -40,6 +40,7 @@
 	    			
 <?php
 						include('profile.php');
+            echo "* Please Collect The Accommodation  Amount";
             include('transaction_table.php');
 ?>	 
 						<div class="container" style="padding-top: 30px">
