@@ -218,3 +218,9 @@ div.super-admin-tabs button.active {
 	padding:5px;
 	margin:20px;
 }
+.acc-table th,td {
+    text-align: left;
+    padding:5px;
+    width:20%;
+    border-bottom: 1px solid #ddd;
+}
