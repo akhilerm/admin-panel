@@ -53,6 +53,7 @@
             if($result_amt->num_rows>0)
             {
               $row_amt=$result_amt->fetch_assoc();
+              $_SESSION['SUM']=$row_amt['sum'];
               echo "<h3 style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h3>";
             } 
             else
