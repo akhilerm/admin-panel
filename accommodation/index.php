@@ -1,9 +1,9 @@
 <?php
     require_once("../db_connect.php");
     session_create();
-    if(1)
+    if(session_check()==true)
     {
-        if(1)
+        if(session_set_acc()==1)
         {
 ?>
 <html>

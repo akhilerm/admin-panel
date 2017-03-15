@@ -2,9 +2,9 @@
 <?php
 	require_once("../db_connect.php");
 	session_create();
-	if(1)
+	if(session_check()==true)
   	{
-    	if(1)
+    	if(session_set_acc()==1)
     	{
 			$query="SELECT id,name,gender,accommodation FROM participants Where accommodation>-1 order by gender,accommodation";
 			$result = $con->query($query);
