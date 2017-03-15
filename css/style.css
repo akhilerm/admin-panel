@@ -201,3 +201,20 @@ div.super-admin-tabs button.active {
     width:25%;
     border-bottom: 1px solid #ddd;
 }
+.live-table th,td {
+    text-align: left;
+    padding:5px;
+    width:20%;
+    border-bottom: 1px solid #ddd;
+}
+#search_area{
+	text-align:left;
+	width:40%;
+	padding:5px;
+	margin:20px;
+}
+#event_drop{
+	width:40%;
+	padding:5px;
+	margin:20px;
+}

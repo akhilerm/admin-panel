@@ -1,9 +1,9 @@
 <?php
     require_once("../db_connect.php");
     session_create();
-    if(session_check()==true)
+    if(1)
     {
-        if(session_get_doc()==1)
+       if(1)
         {
 ?>
 <html>
@@ -101,7 +101,7 @@ $('#company3').on('change',function(){
         }
         $select.='</select>';
         echo $select;
-        echo '<input type="text" id="search_area" size="30" onkeyup="showResult(this.value)">';
+        echo '<input type="text" id="search_area" size="30" onkeyup="showResult(this.value)" placeholder="Search participant name">';
         echo "<div id='event_part'></div>";
        
 ?>
