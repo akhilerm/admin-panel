@@ -28,11 +28,11 @@
 						}
 					  	else if($row_event["status"]==0)
 					  	{
-					        echo "<td style= 'color: black;'>Amount Received But<br>Not Complete</td>";
+					    	echo "<td style= 'color: black;'>Amount Received But<br>Not Complete</td>";
 					    }
 					    else if($row_event["status"]==1)
 					  	{
-					        echo "<td style= 'color: black;'>Transaction Confirmed</td>";
+					    	echo "<td style= 'color: black;'>Transaction Confirmed</td>";
 					    }     
 					    echo "</tr>";
 				  	}
