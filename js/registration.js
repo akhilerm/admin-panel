@@ -1,5 +1,6 @@
 var edit_profile;
 var add_mambers;
+var changeTransId;
 function popupGeneratorForEditProfile()
 {
     edit_profile=window.open('../registration/popups.php?id='+getId(),'EDIT_PROFILE','height=400 , width=300');
@@ -34,6 +35,10 @@ function deleteFromEvent(name,pid)
 function popupGeneratorForAddMembers(eid,id)
 {
     add_mambers=window.open('../registration/addMember.php?id='+id+"&eid="+eid,'Add_Members','height=500 , width=400');
+}
+function popupGeneratorForChangeTransid()
+{
+     changeTransId=window.open('../registration/ChangeTransactionId.php','changeTransId','height=500 , width=400');
 }
 
 function newMembers()
