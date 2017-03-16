@@ -28,8 +28,6 @@
                 <div class="col-md-4">
                   <a type="button" href="search.php" class="btn-reg btn btn-default">Search</a>
                 </div>
-           
-                 
                 <div class="col-md-4">
                   <a type="button" href="spotReg.php" class="btn-reg btn btn-default"> Register</a>
                 </div>
