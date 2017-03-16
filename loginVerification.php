@@ -52,4 +52,5 @@
   {
   	$_SESSION['MESSAGE']="Login Failed";
   	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>'; 
+  }
 ?>
