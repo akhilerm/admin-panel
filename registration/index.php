@@ -14,12 +14,10 @@
           <link rel="stylesheet" href="../css/style.css">
           <script src="../js/jquery-1.12.0.min.js"></script>
           <script src="../js/bootstrap.min.js"></script>
-            
         </head>
         <body>
 <?php
         include('../header.php');
-        
 ?>
         <center>   
          <div class="register-main container">   
@@ -45,11 +43,11 @@
   	}
   	else
   	{
-  		header("location:Logout.php");
+  		header("location:../logout.php");
   	}
   }
   else
   {
-  	header("location:Logout.php");
+  	header("location:../logout.php");
   }
 ?>
