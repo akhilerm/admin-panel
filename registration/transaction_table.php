@@ -40,6 +40,8 @@
 			}
 		echo "</table>";
 		echo "<a href=confirm_trans.php class=' btn-eventdet btn btn-default' >Confirm All Transactions</a><br><br>";
-        echo "<input type=\"button\" class=\"btn-regdet btn btn-default\" value=\"Change transId\" style=\"position:relative;\" onclick=\"popupGeneratorForChangeTransid();\"></input>";
+        echo "<input type=\"button\" class=\"btn-regdet btn btn-default\" value=\"Change transId\" style=\"position:relative;\" onclick=\"popupGeneratorForChangeTransid();\"></input><br><br>";
+        echo "<input type=\"button\" class=\"btn-regdet btn btn-default\" value=\"Delete trans ID\" style=\"position:relative;\" onclick=\"popupGeneratorForDeleteTransid();\"></input>";
+
 	}			
 ?>

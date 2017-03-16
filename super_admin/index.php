@@ -97,7 +97,7 @@
             </head>
  	        <body>
  	            
-   
+                <a href="../logout.php">Logout</a>
 	            <div>
 	               <p id="total" class="super-admin-count"></p>
 	            </div>

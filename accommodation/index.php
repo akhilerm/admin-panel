@@ -3,7 +3,7 @@
     session_create();
     if(session_check()==true)
     {
-        if(session_set_acc()==1)
+        if(session_get_acc()==1)
         {
 ?>
 <html>
@@ -46,6 +46,7 @@ function showAcc() {
 </script>
  </head>
  	<body>
+    <a href="../logout.php">Logout</a>
 	<div>
 	<p id="acc"></p>
 	</div>

@@ -41,6 +41,11 @@ function popupGeneratorForChangeTransid()
      changeTransId=window.open('../registration/ChangeTransactionId.php','changeTransId','height=500 , width=400');
 }
 
+function popupGeneratorForDeleteTransid()
+{
+     changeTransId=window.open('../registration/deleteTransaction.php','deleteTransId','height=500 , width=400');
+}
+
 function newMembers()
 {
     add_mambers=window.open('../registration/spotReg.php','height=500 , width=400');

@@ -22,8 +22,8 @@ if(session_check()==true)
         {
             echo "here";
 //        	$row=$result->fetch_assoc();
-    		$sql_update1="update transactions set trans_id='".$ntid."' where trans_id='".$otid."'";
-            $result1=$con->query($sql_update1) or die(mysqli_error());
+    		//$sql_update1="update transactions set trans_id='".$ntid."' where trans_id='".$otid."'";
+            //$result1=$con->query($sql_update1) or die(mysqli_error());
             
             
             $sql_update2="update event_participants set trans_id='".$ntid."' where trans_id='".$otid."'";
