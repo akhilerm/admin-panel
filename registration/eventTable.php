@@ -27,9 +27,8 @@
 				  		    echo "<td style='color: black;'>".$row_event["event_display"]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
 				  		    if($row_event['lock_event']==0)
 				  		    	echo "<td>Registration Open</td>";
-				  		    else if($row_event['lock_event']==1)
+				  		    else if($row_event['lock_event']==1 || $row_event['lock_event']==2)
 				  		    	echo "<td>Registration Closed</td>";
-				  		    echo "</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
 				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
 						  	if($row_event["team"]=='y')

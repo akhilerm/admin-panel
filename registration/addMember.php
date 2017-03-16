@@ -14,7 +14,6 @@ if(session_check()==true)
 		<link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
 		<script src="../js/jquery-1.12.0.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		
 		<script src="../js/add_member.js"></script>
 	</head>
 	<body>
@@ -34,8 +33,7 @@ if(session_check()==true)
 				<div>
                     <form action="#" method="post">
 						<div class="form-group">
-                             <label for="phno" align="left" class="control-label">Phone Number of Pre-registered member*</label>
-							
+                            <label for="phno" align="left" class="control-label">Phone Number of Pre-registered member*</label>
 							<input class="form-control" type="text" placeholder="" required id="phno">
 						</div>
 						<input style="margin-bottom:20px;" type="edit" class="btn-eventdet btn btn-default" value="SUBMIT" onclick="Add_Member();">
@@ -47,10 +45,8 @@ if(session_check()==true)
 								<th>Member</th>
 								<th>Phone</th>
                         	</tr>   
-                        
                         </thead>
-                        <tbody >
-                        	       
+                        <tbody >	       
 <?php
 							$sql_get="select member_id from team where head_id='".$head_id."' and event_id='".$event_id."'";
 							$result=$con->query($sql_get);
@@ -64,7 +60,7 @@ if(session_check()==true)
 									{
 										while($row1=$result1->fetch_assoc())
 										{
-											echo "<tr> <td>".$row1["name"]."</td> <td>  ".$row1["phone"]."</td></tr>";
+											echo "<tr> <td>".$row1["name"]."</td> <td> ".$row1["phone"]."</td></tr>";
 										}
 									}
 								}
@@ -72,7 +68,6 @@ if(session_check()==true)
 ?>
               			</tbody>   
            			</table>              
-					
 				</div>
 			</div>
 		</div>
