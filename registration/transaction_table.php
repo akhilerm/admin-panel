@@ -39,11 +39,7 @@
 			  	} 
 			}
 		echo "</table>";
-		echo"<td><a href=confirm_trans.php class= ' btn-eventdet btn btn-default' >Confirm All Transactions</a></td>";
-        
-        //changes made by jerin on 16/3 11:10pm
+		echo "<a href=confirm_trans.php class=' btn-eventdet btn btn-default' >Confirm All Transactions</a><br><br>";
         echo "<input type=\"button\" class=\"btn-regdet btn btn-default\" value=\"Change transId\" style=\"position:relative;\" onclick=\"popupGeneratorForChangeTransid();\"></input>";
-        //end of changes
-
 	}			
 ?>
