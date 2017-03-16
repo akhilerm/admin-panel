@@ -44,17 +44,35 @@
 		              	<td id="accomodation">
 <?php 
 		              		if($row["accommodation"]==-1)
+		              		{
+		              			$_SESSION['SUM_ACC']=0;
 		              			echo "Not Needed";
+		              		}
 		              		else if($row["accommodation"]==0)
+		              		{
+		              			$_SESSION['SUM_ACC']=0;
 		              			echo "Needed, But Not Paid";
+		              		}
 		              		else if($row["accommodation"]==1)
+		              		{
+		              			$_SESSION['SUM_ACC']=100;
 		              			echo "Paid For 1 Day";
+		              		}
 		              		else if($row["accommodation"]==2)
+		              		{
+		              			$_SESSION['SUM_ACC']=200;
 		              			echo "Paid For 2 Days";
+		              		}
 		              		else if($row["accommodation"]==3)
+		              		{
+		              			$_SESSION['SUM_ACC']=250;
 		              			echo "Paid For 3 Days";
+		              		}
 		              		else if($row["accommodation"]==4)
+		              		{
+		              			$_SESSION['SUM_ACC']=300;
 		              			echo "Paid For 4 Days";
+		              		}
 ?>
 		           		</td>                
 		            </tr>

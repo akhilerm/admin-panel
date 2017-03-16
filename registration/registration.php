@@ -40,7 +40,7 @@
 	    			
 <?php
 						include('profile.php');
-            echo "* Please Collect The Accommodation  Amount";
+           // echo "* Please Collect The Accommodation  Amount";
             include('transaction_table.php');
 ?>	 
 						<div class="container" style="padding-top: 30px">
@@ -55,11 +55,25 @@
             if($result_amt->num_rows>0)
             {
               $row_amt=$result_amt->fetch_assoc();
-              $_SESSION['SUM']=$row_amt['sum'];
-              echo "<h4 class='colblue' style='text-align:center'>Amount To Be Collected :".$row_amt['sum']."</h4>";
+              $_SESSION['SUM_SPOT']=$row_amt['sum'];
             } 
             else
-              echo "<h4 class='colblue' style='text-align:center'>Amount To Be Collected :0</h4>";
+              $_SESSION['SUM_SPOT']=0;
+            echo "<h4 class='colblue' style='text-align:center'>Spot Registration Amount :".$_SESSION['SUM_SPOT']."</h4>";
+            
+            $query_amt_diff="select sum(amt_diff) as sum from transactions where status!=1 and part_id=".$row['id'];
+            $result_amt_diff=$con->query($query_amt_diff) or die(mysqli_error($con));
+            if($result_amt_diff->num_rows>0)
+            {
+              $row_amt_diff=$result_amt_diff->fetch_assoc();
+              $_SESSION['SUM_DIFF']=$row_amt_diff['sum'];
+            } 
+            else
+              $_SESSION['SUM_DIFF']=0;
+            echo "<h4 class='colblue' style='text-align:center'>Difference In Transaction Amount :".$_SESSION['SUM_DIFF']."</h4>";
+            echo "<h4 class='colblue' style='text-align:center'>Accommodation Amount :".$_SESSION['SUM_ACC']."</h4>";
+            $_SESSION['SUM']=$_SESSION['SUM_ACC']+$_SESSION['SUM_SPOT']+$_SESSION['SUM_DIFF'];
+            echo "<h3 class='colblue' style='text-align:center'>Total Amount To Be Collected :".$_SESSION['SUM']."</h3>";
 ?>
 						<div class="submitform">
 	      			<input type="submit" class="btn-eventdet btn btn-default" value="submit" onclick="Submit();">
