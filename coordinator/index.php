@@ -25,9 +25,32 @@
 				</head>
 				<body>
                     <center>
-                    <?php
-                        include('../header.php');
-                        ?>
+                     <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                <img class="brand" src="../images/title.png">
+              </a>
+
+              <ul class="nav navbar-nav navbar-right  ">
+                  <li class=""><a class="colblue" href="index.php">Home</a></li>
+
+                  <li><a class="colblue" href="../logout.php"> Logout</a></li>
+                  <li><a class="colblue">
+				  <?php
+                  					
+							$query="SELECT event_name from events where event_id='".$event_id."';";
+							$result = $con->query($query);
+							$row=$result->fetch_assoc();
+							echo $row['event_name'];
+                    		?></a></li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+
+                    
 					<!---header-->
 				
 					<div class="main-section agile">         
