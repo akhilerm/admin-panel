@@ -39,18 +39,17 @@
   		else
   		{
   			$_SESSION['MESSAGE']="Login Failed";
-  			header('Location: logout.php');	
+  			echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>'; 	
   		}
 	  }
 	  else
 	  {
 	  	$_SESSION['MESSAGE']="Login Failed";
-	  	header('Location: logout.php');	
+	  	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';	
 	  }
   }
   else
   {
   	$_SESSION['MESSAGE']="Login Failed";
-  	header('Location: logout.php');
-  }
+  	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>'; 
 ?>
