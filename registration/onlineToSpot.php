@@ -14,7 +14,7 @@ if(session_check()==true)
 			{
 				if(empty($row['trans_id']))
 				{
-					$query_num="SELECT `AUTO_INCREMENT` as a FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'conjura_spot' AND TABLE_NAME = 'transactions';";
+					$query_num="SELECT `AUTO_INCREMENT` as a FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'conjura' AND TABLE_NAME = 'transactions';";
 					$next_num=$con->query($query_num);
 					$row_num=$next_num->fetch_assoc();
 					$t_id=15000+$row_num['a'];              // not considering stored transaction
