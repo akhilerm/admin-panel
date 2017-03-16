@@ -51,9 +51,8 @@ if(session_check()==true)
 			}
 		}
 		$sql_del="delete from event_participants where event_id not in (select event_id from events where lock_event=1) and  part_id='".$part_id."'";
-		$con->query($sql_del) or die(mysqli_error($con));
-		echo $part_id;                                       
-		header('Location:registration.php?input='.$part_id.'&option=0');	
+		$con->query($sql_del) or die(mysqli_error($con));                                      
+		echo '<meta http-equiv="refresh" content="0;url=registration.php?input='.$part_id.'&option=0"/>';
     }
     else
     	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
