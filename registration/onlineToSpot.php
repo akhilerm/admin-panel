@@ -34,13 +34,13 @@ if(session_check()==true)
 						}
 						else if(!empty($row_trans['trans_id']) && $row_trans['status']!=1)
 						{
-							header("location:registration.php?input=".$part_id."&option=0&info=status_not_one");
+							echo '<meta http-equiv="refresh" content="0;url=registration.php?input=".$part_id."&option=0&info=status_not_one"/>';
 							return;
 						}
 					}
 					else
 					{
-						header("location:registration.php?input=".$part_id."&option=0&info=no_transactions");
+						echo '<meta http-equiv="refresh" content="0;url=registration.php?input=".$part_id."&option=0&info=no_transactions"/>';
 						return;
 					}
 				}
@@ -55,8 +55,8 @@ if(session_check()==true)
 		header('Location:registration.php?input='.$part_id.'&option=0');	
     }
     else
-    	header("location:../logout.php");
+    	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 }
 else
-	header("location:../logout.php");
+	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 ?>

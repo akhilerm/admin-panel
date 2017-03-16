@@ -10,12 +10,12 @@
 			$query = "UPDATE event_participants_spot set attendance = 2 where event_id = '".$event_id."' and part_id = '".$part_id."';";
 			echo $query;	
 			$result = $con-> query($query);
-			header("location:../index.php");
+			echo '<meta http-equiv="refresh" content="0;url=../index.php"/>';
 		}
 		else
-			header("location:../index.php");
+			echo '<meta http-equiv="refresh" content="0;url=../index.php"/>';
 	
 	}
 	else
-		header("location:../index.php");
+		echo '<meta http-equiv="refresh" content="0;url=../index.php"/>';
 ?>

@@ -92,22 +92,22 @@
 	      else
 	      {
 	      	$_SESSION['SEARCH_MSG']="No records Found.";
-   				header("location:search.php");
+   				echo '<meta http-equiv="refresh" content="0;url=search.php"/>';
 	      }
    		}
    		else
    		{
    			$_SESSION['SEARCH_MSG']="Please Try Again.";
-   			header("location:search.php");
+   			echo '<meta http-equiv="refresh" content="0;url=search.php"/>';
    		} 		
 	  }
 	  else
 	  {
-	  	header("location:../logout.php");
+	  	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 	  }
 	}
 	else
 	{
-		header("location:../logout.php");
+		echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 	}
 ?>

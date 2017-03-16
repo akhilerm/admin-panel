@@ -17,10 +17,10 @@ if(session_check()==true)
     }
     else
 	{
-		header("location:registration.php");
+		echo '<meta http-equiv="refresh" content="0;url=registration.php"/>';
 	}
 }
 else
 {
-	header("location:registration.php");
+	echo '<meta http-equiv="refresh" content="0;url=registration.php"/>';
 }

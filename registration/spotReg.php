@@ -25,8 +25,8 @@ if(session_check()==true)
 			header('Location:registration.php?input='.$num.'&option=0');
 	}
 	else
-		header("location:../logout.php");
+		echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 }
 else
-	header("location:../logout.php");
+	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 ?>

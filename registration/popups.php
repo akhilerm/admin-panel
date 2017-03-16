@@ -95,11 +95,11 @@ if(session_check()==true)
     }
     else
 	{
-		header("location:../logout.php");
+		echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 	}
 }
 else
 {
-	header("location:../logout.php");
+	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';
 }
 ?>
