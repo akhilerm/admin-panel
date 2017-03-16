@@ -34,7 +34,7 @@ if(session_check()==true)
 						}
 						else if(!empty($row_trans['trans_id']) && $row_trans['status']!=1)
 						{
-							echo '<meta http-equiv="refresh" content="0;url=registration.php?input=".$part_id."&option=0&info=status_not_one"/>';
+							echo '<meta http-equiv="refresh" content="0;url=registration.php?input='.$part_id.'&option=0&info=status_not_one"/>';
 							return;
 						}
 					}
@@ -51,7 +51,8 @@ if(session_check()==true)
 			}
 		}
 		$sql_del="delete from event_participants where event_id not in (select event_id from events where lock_event=1) and  part_id='".$part_id."'";
-		$con->query($sql_del) or die(mysqli_error($con));                                       
+		$con->query($sql_del) or die(mysqli_error($con));
+		echo $part_id;                                       
 		header('Location:registration.php?input='.$part_id.'&option=0');	
     }
     else
