@@ -27,8 +27,10 @@
 				  		    echo "<td style='color: black;'>".$row_event["event_display"]."</td><td style= 'color: black;'>".$row_event["amount"]."</td>";
 				  		    if($row_event['lock_event']==0)
 				  		    	echo "<td>Registration Open</td>";
-				  		    else if($row_event['lock_event']==1 || $row_event['lock_event']==2)
+				  		    else if($row_event['lock_event']==1)
 				  		    	echo "<td>Registration Closed</td>";
+				  		    else if($row_event['lock_event']==2)
+				  		    	echo "<td>No Spot Registration.</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
 				  			echo "<td style= 'color: black;'>Cannot Be Deleted</td>";
 						  	if($row_event["team"]=='y')
@@ -60,6 +62,8 @@
 				  		    	echo "<td>Registration Open</td>";
 				  		    else if($row_event['lock_event']==1)
 				  		    	echo "<td>Registration Closed.<br>Contact Coordiator</td>";
+				  		    else if($row_event['lock_event']==2)
+				  		    	echo "<td>No Spot Registration.</td>";
 				        	echo "<td style= 'color: black;'>".$row_event["amt"]."</td><td style= 'color: black;'>".$row_event["trans_id"]."</td>";	
 				  			echo"<td><input type= 'button' class= 'btn-eventdet btn btn-default'  value= 'Delete' onclick=\"deleteFromEvent('".$row_event["event_id"]."','".$row['id']."');\" id=".$row_event['event_id']."></td>";              	  	
 						  	if($row_event["team"]=='y')

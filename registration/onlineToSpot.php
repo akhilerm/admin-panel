@@ -14,7 +14,6 @@ if(session_check()==true)
 			{
 				if(empty($row['trans_id']))
 				{
-					//echo "1";
 					$query_num="SELECT `AUTO_INCREMENT` as a FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'conjura_spot' AND TABLE_NAME = 'transactions';";
 					$next_num=$con->query($query_num);
 					$row_num=$next_num->fetch_assoc();
@@ -24,7 +23,6 @@ if(session_check()==true)
 				}
 				else
 				{
-					echo "2";
 					$query_trans="select * from transactions where trans_id=".$row['trans_id']." and part_id=".$part_id;
 					$result_trans=$con->query($query_trans) or die(mysqli_error($con));
 					if($result_trans->num_rows>0)

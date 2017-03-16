@@ -40,7 +40,7 @@
 	    			
 <?php
 						include('profile.php');
-           // echo "* Please Collect The Accommodation  Amount";
+            echo "<h4>* Collect an amount of Rs.".$_SESSION['SUM_ACC']." when accommodation is edited.";
             include('transaction_table.php');
 ?>	 
 						<div class="container" style="padding-top: 30px">
@@ -71,9 +71,9 @@
             else
               $_SESSION['SUM_DIFF']=0;
             echo "<h4 class='colblue' style='text-align:center'>Difference In Transaction Amount :".$_SESSION['SUM_DIFF']."</h4>";
-            echo "<h4 class='colblue' style='text-align:center'>Accommodation Amount :".$_SESSION['SUM_ACC']."</h4>";
-            $_SESSION['SUM']=$_SESSION['SUM_ACC']+$_SESSION['SUM_SPOT']+$_SESSION['SUM_DIFF'];
-            echo "<h3 class='colblue' style='text-align:center'>Total Amount To Be Collected :".$_SESSION['SUM']."</h3>";
+            $_SESSION['SUM']=$_SESSION['SUM_SPOT']+$_SESSION['SUM_DIFF'];
+            echo "<h3 class='colblue' style='text-align:center'>Total Amount To Be Collected (Excluding Accommodation):".$_SESSION['SUM']."</h3>";
+            unset($_SESSION['SUM_ACC']);
 ?>
 						<div class="submitform">
 	      			<input type="submit" class="btn-eventdet btn btn-default" value="submit" onclick="Submit();">

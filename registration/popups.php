@@ -27,7 +27,6 @@ if(session_check()==true)
 				<div class="main">
 					<div class="main-section agile">
 						<div>
-							
 							<form action="#" method="post">
 								<div class="form-group">
                                     <label for="name" align="left" class="control-label"> Name*</label>
@@ -77,9 +76,9 @@ if(session_check()==true)
 											<option value="-1" <?php if($profile['accommodation']=='-1'){echo "selected";} ?>>Not Needed</option>
 											<option value="0" <?php if($profile['accommodation']=='0'){echo "selected";} ?>>Needed But Not Paid</option>
 											<option value="1" <?php if($profile['accommodation']=='1'){echo "selected";} ?>>Paid For 1 Day</option>
-											<option value="2" <?php if($profile['accommodation']=='2'){echo "selected";} ?>>Paid For 2</option>
-											<option value="3" <?php if($profile['accommodation']=='3'){echo "selected";} ?>>Paid For 3</option>
-											<option value="4" <?php if($profile['accommodation']=='4'){echo "selected";} ?>>Paid For 4</option>
+											<option value="2" <?php if($profile['accommodation']=='2'){echo "selected";} ?>>Paid For 2 Days</option>
+											<option value="3" <?php if($profile['accommodation']=='3'){echo "selected";} ?>>Paid For 3 Days</option>
+											<option value="4" <?php if($profile['accommodation']=='4'){echo "selected";} ?>>Paid For 4 Days</option>
 										</select>
 									
 								 </div>

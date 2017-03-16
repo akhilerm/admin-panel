@@ -39,7 +39,6 @@
 			  	} 
 			}
 		echo "</table>";
-		echo "* Click The 'Confirm All Transactions' only once all the difference in amount is collected<br>";
 		echo"<td><a href=confirm_trans.php class= ' btn-eventdet btn btn-default' >Confirm All Transactions</a></td>";
         
         //changes made by jerin on 16/3 11:10pm
