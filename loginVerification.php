@@ -45,12 +45,12 @@
 	  else
 	  {
 	  	$_SESSION['MESSAGE']="Login Failed";
-	  	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>';	
+	  	echo '<meta http-equiv="refresh" content="0;url=logout.php"/>';	
 	  }
   }
   else
   {
   	$_SESSION['MESSAGE']="Login Failed";
-  	echo '<meta http-equiv="refresh" content="0;url=../logout.php"/>'; 
+  	echo '<meta http-equiv="refresh" content="0;url=logout.php"/>'; 
   }
 ?>
