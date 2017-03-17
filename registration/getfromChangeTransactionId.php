@@ -20,11 +20,9 @@ if(session_check()==true)
         $result=$con->query($sql_get) or die(mysqli_error());
         if($result->num_rows>0)
         {
-            echo "here";
-//        	$row=$result->fetch_assoc();
-    		//$sql_update1="update transactions set trans_id='".$ntid."' where trans_id='".$otid."'";
-            //$result1=$con->query($sql_update1) or die(mysqli_error());
-            
+           	$row=$result->fetch_assoc();
+    		$sql_update1="update transactions set trans_id='".$ntid."' where trans_id='".$otid."'";
+            $result1=$con->query($sql_update1) or die(mysqli_error());
             
             $sql_update2="update event_participants set trans_id='".$ntid."' where trans_id='".$otid."'";
             $result2=$con->query($sql_update2) or die(mysqli_error());

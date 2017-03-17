@@ -28,7 +28,6 @@
 				  	<th>Transaction ID</th>
 				    <th>Amount</th>
 				    <th>Conjura_id</th>
-				    <th>Amount Difference</th>
 				    <th>Status</th>
 				  </tr>";
         if($result){
@@ -37,14 +36,16 @@
 			    echo "<tr>";
 			    echo "<td>".$row['trans_id']."  </td>";
 			    echo "<td>".$row['amt']."</td>";
-			    echo "<td>".$row['part_id'] . "</td>";
-   			    echo "<td>".$row['amt_diff']."</td>";
-			    echo "<td>".$row['status']."</td>";
+			    echo "<td>".$row['part_id']."</td>";
+   			    if($row['status']==1)
+   			    	echo "<td>Amount Confirmed</td>";
+   			    else	
+        			echo "<td><a  href='delete.php?id=".$row['trans_id']."'>Lock</a>   </td>";
 			    echo "</tr>";
 			}
 			
        }
-       echo "</table>";
+       echo "</table>";	
        echo "</div>";
 ?>
    
