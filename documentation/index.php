@@ -3,7 +3,7 @@
     session_create();
     if(session_check()==true)
     {
-       if(session_set_doc()==1)
+       if(session_get_doc()==1)
         {
 ?>
 <html>
