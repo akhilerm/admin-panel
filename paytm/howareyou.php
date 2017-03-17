@@ -27,7 +27,7 @@
 <body>
 
 <?php 
-        $query="SELECT trans_id,amt from paytm where part_id=NULL";
+        $query="SELECT trans_id,amt from paytm where part_id=0";
         $result = $con->query($query);
         echo "<div class='content'>";
         echo "<table class='super-admin-table'>
