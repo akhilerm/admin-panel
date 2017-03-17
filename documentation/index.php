@@ -3,7 +3,7 @@
     session_create();
     if(session_check()==true)
     {
-       if(session_set_doc()==1)
+       if(session_get_doc()==1)
         {
 ?>
 <html>
@@ -24,30 +24,10 @@
 		<!--web-fonts-->
 		
 </head>
+
 <body>
 <script>
-function showResult(str) {
-    if (str.length==0) {
-        document.getElementById("event_part").innerHTML="";
-       
-        return;
-    }
-    if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    }
-    else {  // code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function() {
-        if (this.readyState==4 && this.status==200) {
-            document.getElementById("event_part").innerHTML=this.responseText;
-            
-        }
-    }
-    xmlhttp.open("GET","liveSearch.php?q="+str,true);
-    xmlhttp.send();
-}
+
 function showUser(str)
 {
     if (str=="")
@@ -67,27 +47,14 @@ function showUser(str)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
+        
             document.getElementById("event_part").innerHTML=xmlhttp.responseText;
         }
     }
     xmlhttp.open("GET","getDoc.php?q="+str,true);
     xmlhttp.send();
 }
-/*$(document).ready(function(){
-$('#company3').on('change',function(){
-            var cmID = $(this).val();
-            if(cmID){
-              $.ajax({
-                type:'POST',
-                url:'drive_course_list.php',
-                data:'cmpid='+cmID,
-                success:function(html){
-                  $('#course3').html(html);
-                }
-              }); 
-            }
-          });
-});*/
+
 </script>
 
 <?php 
@@ -101,8 +68,8 @@ $('#company3').on('change',function(){
         }
         $select.='</select>';
         echo $select;
-        echo '<input type="text" id="search_area" size="30" onkeyup="showResult(this.value)" placeholder="Search participant name">';
-        echo "<div id='event_part'></div>";
+       /* echo '<input type="text" id="search_area" size="30" onkeyup="showResult(this.value)" placeholder="Search participant name">';*/
+        echo "<p id='event_part'></p>";
        
 ?>
    
