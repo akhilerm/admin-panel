@@ -6,8 +6,9 @@
     	if(session_get_doc()==1)
     	{
 			$q=$_GET["q"];
-			$query="select name,participants.id,college,event_participants_spot.attendance FROM participants,event_participants_spot,events,team WHERE events.event_id=event_participants_spot.event_id AND events.event_name='".$q."' AND (event_participants_spot.part_id=participants.id OR (event_participants_spot.part_id=team.head_id AND team.member_id=participants.id))";
+			$query="select distinct participants.id,name,college_name,event_participants_spot.attendance FROM participants,event_participants_spot,events,team,college WHERE (events.event_id=event_participants_spot.event_id AND events.event_id='".$q."' AND event_participants_spot.part_id=participants.id AND participants.college=college.college_id AND attendance>-1) OR (team.event_id='".$q."' AND head_id=event_participants_spot.part_id AND attendance>-1 AND member_id=participants.id AND participants.college=college.college_id)";
 			$result = $con->query($query);
+			
 			echo "
 			<table class='super-admin-table documentation-table'>
 			<tr>
