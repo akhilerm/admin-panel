@@ -24,9 +24,9 @@
 		<!--web-fonts-->
 				
                 <script>
-                    var myVar = setInterval(showCount, 1000);
-                    var myVar3 = setInterval(showLeader, 1000);
-                    var myVar2 = setInterval(showTable, 1000);
+                    var myVar = setInterval(showCount, 3000);
+                    var myVar3 = setInterval(showLeader, 4000);
+                    var myVar2 = setInterval(showTable, 6000);
                     
                     function showCount() {
                         if (window.XMLHttpRequest) {

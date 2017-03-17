@@ -96,11 +96,11 @@
 									echo "<td>".++$count."</td><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['college']."</td><td>".$row['email']."</td><td>".$row['phone']."</td>";
 									if($newstatus==-1)
 									{
-										echo "<td><a href='present.php/?id=".$row['id']."'>present</a></td>";
+										echo "<td><a href='present.php/?id=".$row['id']."'>mark as present</a></td>";
 									}
 									if($newstatus!=-1)
 									{
-										echo "<td><a href='absent.php/?id=".$row['id']."'>absent</a></td>";
+										echo "<td><a href='absent.php/?id=".$row['id']."'>mark as absent</a></td>";
 									}
 									if($priz ==-1 OR $priz==0)
 									{

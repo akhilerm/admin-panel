@@ -10,7 +10,7 @@ require_once("../db_connect.php");
 			echo "<table class='super-admin-table'>
 				  <tr>
 				    <th>Event</th>
-				    <th>Participant Count</th>
+				    <th>Team Count</th>
 				  </tr>";
 			while($row = mysqli_fetch_array($result)) {
 			    echo "<tr>";
