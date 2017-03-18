@@ -17,12 +17,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="../js/Registration.js"></script>
-		<!--web-fonts-->
-		<!--<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>-->
-		<script src="../js/jquery-1.12.0.min.js"></script>
-		
-		<!--web-fonts-->
-				
+		<script src="../js/jquery-1.12.0.min.js"></script>				
                 <script>
                     var myVar = setInterval(showCount, 3000);
                     var myVar3 = setInterval(showLeader, 4000);
@@ -102,16 +97,11 @@
 	               <p id="total" class="super-admin-count"></p>
 	            </div>
 	            <div class="super-admin-tabs">
-		    	<button class="tablinks"  onclick="openTab(event, 'table2')">Leaderboard</button>
-		  	<button class="tablinks"  onclick="openTab(event, 'table')">Event</button>
-		    </div>
-		    <div id="table2" class="super-admin-tabcontent">
-		    </div> 
-	            <div id="table" class="super-admin-tabcontent">
-		    </div> 
-		    
-		   
-		
+    		    	<button class="tablinks"  onclick="openTab(event, 'table2')">Leaderboard</button>
+        		  	<button class="tablinks"  onclick="openTab(event, 'table')">Event</button>
+    		    </div>
+    		    <div id="table2" class="super-admin-tabcontent"></div> 
+    	        <div id="table" class="super-admin-tabcontent"></div> 
 		    
 	        </body>
             </html>
