@@ -64,9 +64,9 @@
 									while($row=$result->fetch_assoc())
 										$status=$row['lock_event'];
 								if($status == 0)
-									echo "<a href='lock.php' >LOCK</a>";
+									echo "<a href='lock.php' >LOCK EVENT</a>";
 								else
-									echo "<a href='unlock.php' >UNLOCK</a>";
+									echo "<a href='unlock.php' >UNLOCK EVENT</a>";
 							?>
 		        			</button>
                             </div>
